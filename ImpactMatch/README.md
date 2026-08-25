@@ -6,19 +6,25 @@ lograr los objetivos**.
 
 ## Cómo abrirlo en Xcode
 
-Estos son archivos fuente (no un `.xcodeproj`, porque eso solo se puede
-generar correctamente desde Xcode). Para importarlos:
+Ya existe un proyecto real: **`ImpactMatch.xcodeproj`** en la raíz de esta
+carpeta. Solo hace falta:
 
-1. Abre Xcode → **File > New > Project… > iOS > App**.
-2. Nómbralo **ImpactMatch**, interfaz **SwiftUI**, lenguaje **Swift**.
-   Guárdalo donde quieras.
-3. Xcode crea automáticamente `ImpactMatchApp.swift` y `ContentView.swift`.
-   **Borra `ContentView.swift`** (no se usa) y **reemplaza** el
-   `ImpactMatchApp.swift` que generó Xcode por el de esta carpeta.
-4. En el navegador de Xcode, clic derecho sobre el grupo `ImpactMatch` →
-   **Add Files to "ImpactMatch"…** → selecciona las carpetas `Core`,
-   `Components` y `Views` de este proyecto (con "Create groups" marcado).
-5. Compila con `Cmd + R` en un simulador de iPhone.
+1. Doble clic en `ImpactMatch.xcodeproj` (se abre en Xcode).
+2. Elige un simulador de iPhone arriba a la izquierda.
+3. `Cmd + R` para correr, o `Cmd + B` para solo compilar.
+
+No hay que crear un proyecto nuevo ni arrastrar archivos — eso ya está
+hecho. Si en algún momento agregas o quitas archivos `.swift` fuera de
+Xcode (por ejemplo editándolos por fuera), corre esto desde la raíz para
+regenerar el `.xcodeproj` y que los vea:
+
+```bash
+brew install xcodegen   # una sola vez
+xcodegen generate
+```
+
+El proyecto se describe en `project.yml` — esa es la fuente de verdad,
+no el `.xcodeproj` (que es generado y no se debe editar a mano).
 
 ## Estructura
 
@@ -30,10 +36,13 @@ ImpactMatch/
 │   ├── Models.swift            # UserProfile, Opportunity, Match, Connection...
 │   ├── AppStore.swift          # Estado global + motor de matching explicable
 │   └── MockData.swift          # Datos de ejemplo para la demo escolar
+│   ├── LocationManager.swift    # Envoltorio de CoreLocation para el mapa
+│   └── MockData.swift          # Datos de ejemplo para la demo escolar
 ├── Components/
 │   ├── CompatibilityBadge.swift
 │   ├── OpportunityCard.swift
-│   └── StatCard.swift
+│   ├── StatCard.swift
+│   └── TagSelector.swift       # Selector de chips para habilidades/intereses
 └── Views/
     ├── Onboarding/
     │   ├── SplashView.swift
@@ -48,9 +57,33 @@ ImpactMatch/
         ├── CreateOpportunityView.swift
         ├── ConnectionsView.swift
         ├── ImpactStatsView.swift
+        ├── NearMeView.swift        # Mapa "Cerca de mí" (personas y organizaciones)
+        ├── ProfileEditorView.swift # Armar perfil (registro) y editarlo después
         ├── ProfileView.swift
         └── SettingsView.swift
 ```
+
+## Perfil: habilidades antes de crear la cuenta
+
+Al registrarte, después de nombre/correo/contraseña pasas por
+`ProfileEditorView` (modo `.create`) **antes** de que la cuenta se cree de
+verdad: eliges tus habilidades e intereses (de una lista sugerida en
+`SkillCatalog` o escribiendo las tuyas), tu disponibilidad y modalidad
+preferida. Esos datos son justo lo que usa `MatchEngine`, así que desde el
+primer match el porcentaje es real y no genérico.
+
+Puedes editar todo esto después desde **Perfil → ícono de lápiz**, que abre
+la misma vista en modo `.edit`.
+
+## Mapa "Cerca de mí"
+
+Desde **Explorar → ícono de mapa** se abre `NearMeView`: un mapa (MapKit)
+con personas y organizaciones cercanas. Usa tu ubicación real si das
+permiso (pide `NSLocationWhenInUseUsageDescription`); si no, centra en una
+ubicación por defecto para que la demo funcione igual. Como no hay backend
+de geolocalización real, las posiciones son simuladas alrededor del centro
+(`NearbyEntity.mockNearby` en `MockData.swift`) — el patrón queda listo
+para conectarse a datos reales más adelante.
 
 ## Cómo funciona el matching (explicable, no inventado)
 
@@ -78,10 +111,13 @@ Firestore en vez de arrays en memoria, sin tocar las vistas.
 
 ## Alcance de esta versión (v1, escolar)
 
-Incluye: splash, login, registro con selección de tipo de usuario, perfil,
-explorar oportunidades con filtros y buscador, crear oportunidad, detalle
-con matching explicado, solicitar/aplicar, conexiones, y estadísticas de
-impacto.
+Incluye: splash, login, registro con selección de tipo de usuario y
+armado de perfil (habilidades, intereses, disponibilidad, modalidad)
+antes de crear la cuenta, edición de perfil, explorar oportunidades con
+filtros y buscador, mapa de personas/organizaciones cerca de ti, crear
+oportunidad, detalle con matching explicado, solicitar/aplicar,
+conexiones, y estadísticas de impacto.
 
 Quedan para v2 (mencionado en tu planteamiento): chat, notificaciones,
-mapas, sistema de reputación, matching con IA, backend real.
+geolocalización real de otros usuarios (hoy es simulada), sistema de
+reputación, matching con IA, backend real.

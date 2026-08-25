@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 extension UserProfile {
     static let mockDaniel = UserProfile(
@@ -86,4 +87,61 @@ extension Opportunity {
             duration: "2 meses"
         ),
     ]
+}
+
+// MARK: - Personas cerca de ti (mock, para el mapa "Cerca de mí")
+
+extension NearbyEntity {
+    private static let mockPeople: [(name: String, subtitle: String, tags: [String], icon: String)] = [
+        ("Camila Torres", "Diseñadora UX", ["Diseño", "UX/UI"], "paintbrush.fill"),
+        ("Luis Hernández", "Desarrollador backend", ["Programación", "AWS"], "chevron.left.forwardslash.chevron.right"),
+        ("Ana Ramírez", "Voluntaria social", ["Educación", "Trabajo en equipo"], "person.fill"),
+        ("Jorge Paredes", "Estudiante de diseño", ["Diseño", "Branding"], "paintpalette.fill"),
+        ("Sofía Delgado", "Product manager jr.", ["Gestión de proyectos", "Liderazgo"], "chart.bar.fill"),
+        ("Renata Solís", "Fotógrafa y video", ["Fotografía", "Video"], "camera.fill"),
+    ]
+
+    /// Genera personas y organizaciones dispersas alrededor de un centro
+    /// (ubicación real del usuario si está disponible, o una por defecto).
+    /// No hay backend de geolocalización real todavía — son coordenadas
+    /// simuladas para la demo escolar.
+    static func mockNearby(around center: CLLocationCoordinate2D) -> [NearbyEntity] {
+        let organizations = Opportunity.mockList
+        let total = mockPeople.count + organizations.count
+
+        var result: [NearbyEntity] = mockPeople.enumerated().map { index, person in
+            NearbyEntity(
+                name: person.name,
+                kind: .person,
+                subtitle: person.subtitle,
+                icon: person.icon,
+                tags: person.tags,
+                coordinate: offsetCoordinate(from: center, index: index, total: total)
+            )
+        }
+
+        result += organizations.enumerated().map { offset, opportunity in
+            let index = offset + mockPeople.count
+            return NearbyEntity(
+                name: opportunity.organizationName,
+                kind: .organization,
+                subtitle: opportunity.title,
+                icon: opportunity.organizationIcon,
+                tags: opportunity.requiredSkills,
+                coordinate: offsetCoordinate(from: center, index: index, total: total),
+                opportunity: opportunity
+            )
+        }
+
+        return result
+    }
+
+    private static func offsetCoordinate(from center: CLLocationCoordinate2D, index: Int, total: Int) -> CLLocationCoordinate2D {
+        let angle = (2 * Double.pi / Double(max(total, 1))) * Double(index)
+        let radiusKm = 0.6 + Double(index % 4) * 0.45
+        let earthRadiusKm = 6371.0
+        let latOffset = (radiusKm / earthRadiusKm) * (180 / .pi) * cos(angle)
+        let lonOffset = (radiusKm / earthRadiusKm) * (180 / .pi) * sin(angle) / cos(center.latitude * .pi / 180)
+        return CLLocationCoordinate2D(latitude: center.latitude + latOffset, longitude: center.longitude + lonOffset)
+    }
 }
