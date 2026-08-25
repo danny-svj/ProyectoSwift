@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 // MARK: - Tipo de usuario
 
@@ -135,4 +136,38 @@ struct ImpactStats {
     var opportunitiesPosted: Int
     var alliancesCreated: Int
     var completedProjects: Int
+}
+
+// MARK: - Personas y organizaciones "cerca de mí" (mapa)
+
+enum NearbyKind {
+    case person
+    case organization
+}
+
+struct NearbyEntity: Identifiable {
+    var id = UUID()
+    var name: String
+    var kind: NearbyKind
+    var subtitle: String
+    var icon: String
+    var tags: [String]
+    var coordinate: CLLocationCoordinate2D
+    var opportunity: Opportunity?
+}
+
+// MARK: - Catálogo de sugerencias para armar el perfil
+
+enum SkillCatalog {
+    static let commonSkills = [
+        "Swift", "SwiftUI", "Programación", "Diseño", "UX/UI",
+        "Trabajo en equipo", "Liderazgo", "Gestión de proyectos",
+        "Marketing", "Redacción", "Fotografía", "Video",
+        "Datos / Analítica", "AWS", "Idiomas", "Docencia", "Ventas", "Finanzas",
+    ]
+
+    static let commonInterests = [
+        "Tecnología social", "Educación", "Sostenibilidad", "Diseño de producto",
+        "Salud", "Igualdad", "Medio ambiente", "Cultura", "Deporte", "Inclusión",
+    ]
 }

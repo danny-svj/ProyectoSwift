@@ -13,6 +13,11 @@ struct SignUpView: View {
     @State private var name = ""
     @State private var email = ""
     @State private var password = ""
+    @State private var goToProfileSetup = false
+
+    private var isValid: Bool {
+        !name.trimmingCharacters(in: .whitespaces).isEmpty && !email.isEmpty && !password.isEmpty
+    }
 
     var body: some View {
         ScrollView {
@@ -33,15 +38,12 @@ struct SignUpView: View {
                 }
 
                 Button {
-                    var profile = store.currentProfile
-                    profile.name = name.isEmpty ? profile.name : name
-                    profile.userType = userType
-                    store.currentProfile = profile
-                    withAnimation { store.isLoggedIn = true }
+                    goToProfileSetup = true
                 } label: {
-                    Text("Crear cuenta")
+                    Text("Continuar")
                 }
-                .buttonStyle(PrimaryGradientButtonStyle())
+                .buttonStyle(PrimaryGradientButtonStyle(isDisabled: !isValid))
+                .disabled(!isValid)
                 .padding(.top, 6)
 
                 Text("Al continuar aceptas los Términos y la Política de privacidad de ImpactMatch.")
@@ -53,6 +55,9 @@ struct SignUpView: View {
         }
         .navigationTitle("Registro")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationDestination(isPresented: $goToProfileSetup) {
+            ProfileEditorView(mode: .create(userType: userType, name: name))
+        }
     }
 }
 

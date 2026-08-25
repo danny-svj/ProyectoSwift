@@ -22,6 +22,12 @@ targets:
           - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
+        NSLocationWhenInUseUsageDescription: >-
+          ImpactMatch usa tu ubicación para mostrarte personas y
+          organizaciones cerca de ti en el mapa.
+    dependencies:
+      - sdk: MapKit.framework
+      - sdk: CoreLocation.framework
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.impactmatch.ImpactMatch

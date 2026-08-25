@@ -11,6 +11,7 @@ struct ExploreView: View {
     @State private var selectedType: OpportunityType? = nil
     @State private var selectedOpportunity: Opportunity?
     @State private var showCreateSheet = false
+    @State private var showMap = false
 
     var filteredMatches: [MatchResult] {
         store.recommendedMatches.filter { match in
@@ -53,6 +54,12 @@ struct ExploreView: View {
             .background(Color.surfaceSecondary.opacity(0.4))
             .navigationTitle("Explorar")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button { showMap = true } label: {
+                        Image(systemName: "map.fill")
+                            .foregroundStyle(Color.brandPrimary)
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { showCreateSheet = true } label: {
                         Image(systemName: "plus.circle.fill")
@@ -65,6 +72,9 @@ struct ExploreView: View {
             }
             .sheet(isPresented: $showCreateSheet) {
                 CreateOpportunityView()
+            }
+            .fullScreenCover(isPresented: $showMap) {
+                NearMeView()
             }
         }
     }

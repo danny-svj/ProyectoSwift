@@ -8,6 +8,7 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var store: AppStore
     @State private var showSettings = false
+    @State private var showEditProfile = false
 
     var body: some View {
         NavigationStack {
@@ -73,13 +74,23 @@ struct ProfileView: View {
             .navigationTitle("Perfil")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button { showSettings = true } label: {
-                        Image(systemName: "gearshape.fill")
+                    HStack(spacing: 16) {
+                        Button { showEditProfile = true } label: {
+                            Image(systemName: "pencil")
+                        }
+                        Button { showSettings = true } label: {
+                            Image(systemName: "gearshape.fill")
+                        }
                     }
                 }
             }
             .sheet(isPresented: $showSettings) {
                 SettingsView()
+            }
+            .sheet(isPresented: $showEditProfile) {
+                NavigationStack {
+                    ProfileEditorView(mode: .edit, existingProfile: store.currentProfile)
+                }
             }
         }
     }
