@@ -24,6 +24,7 @@ struct MainTabView: View {
                 .tabItem { Label("Perfil", systemImage: "person.crop.circle.fill") }
         }
         .tint(Color.brandPrimary)
+        .onAppear { NotificationManager.requestPermission() }
     }
 }
 

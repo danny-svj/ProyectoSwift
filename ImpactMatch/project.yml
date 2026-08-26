@@ -28,6 +28,7 @@ targets:
     dependencies:
       - sdk: MapKit.framework
       - sdk: CoreLocation.framework
+      - sdk: UserNotifications.framework
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.impactmatch.ImpactMatch

@@ -10,6 +10,7 @@ struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
     @State private var notificationsEnabled = true
     @State private var showConfirmLogout = false
+    @State private var showConfirmReset = false
 
     var body: some View {
         NavigationStack {
@@ -35,6 +36,16 @@ struct SettingsView: View {
                         Text("Cerrar sesión")
                     }
                 }
+
+                Section {
+                    Button(role: .destructive) {
+                        showConfirmReset = true
+                    } label: {
+                        Text("Restablecer datos de la demo")
+                    }
+                } footer: {
+                    Text("Borra tu perfil, oportunidades creadas, solicitudes y conexiones, y vuelve a los datos de ejemplo. Útil antes de una presentación.")
+                }
             }
             .navigationTitle("Configuración")
             .navigationBarTitleDisplayMode(.inline)
@@ -49,6 +60,15 @@ struct SettingsView: View {
                     dismiss()
                 }
                 Button("Cancelar", role: .cancel) {}
+            }
+            .confirmationDialog("¿Restablecer todos los datos?", isPresented: $showConfirmReset, titleVisibility: .visible) {
+                Button("Restablecer", role: .destructive) {
+                    store.resetToDemoDefaults()
+                    dismiss()
+                }
+                Button("Cancelar", role: .cancel) {}
+            } message: {
+                Text("Esto no se puede deshacer.")
             }
         }
     }
