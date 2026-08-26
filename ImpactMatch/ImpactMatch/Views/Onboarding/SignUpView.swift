@@ -14,9 +14,33 @@ struct SignUpView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var goToProfileSetup = false
+    @State private var attemptedSubmit = false
+
+    private var nameError: String? {
+        guard attemptedSubmit else { return nil }
+        return name.trimmingCharacters(in: .whitespaces).isEmpty
+            ? (userType == .person ? "Ingresa tu nombre." : "Ingresa el nombre de la organización.")
+            : nil
+    }
+
+    private var emailError: String? {
+        guard attemptedSubmit else { return nil }
+        if email.isEmpty { return "Ingresa tu correo electrónico." }
+        if !FormValidation.isValidEmail(email) { return "Ingresa un correo válido." }
+        return nil
+    }
+
+    private var passwordError: String? {
+        guard attemptedSubmit else { return nil }
+        if password.isEmpty { return "Ingresa tu contraseña." }
+        if !FormValidation.isValidPassword(password) { return "Debe tener al menos \(FormValidation.minPasswordLength) caracteres." }
+        return nil
+    }
 
     private var isValid: Bool {
-        !name.trimmingCharacters(in: .whitespaces).isEmpty && !email.isEmpty && !password.isEmpty
+        !name.trimmingCharacters(in: .whitespaces).isEmpty
+            && FormValidation.isValidEmail(email)
+            && FormValidation.isValidPassword(password)
     }
 
     var body: some View {
@@ -32,18 +56,19 @@ struct SignUpView: View {
                 .padding(.top, 12)
 
                 VStack(spacing: 14) {
-                    LabeledTextField(title: userType == .person ? "Nombre completo" : "Nombre de la organización", text: $name, icon: "person.text.rectangle.fill")
-                    LabeledTextField(title: "Correo electrónico", text: $email, icon: "envelope.fill")
-                    LabeledTextField(title: "Contraseña", text: $password, icon: "lock.fill", isSecure: true)
+                    LabeledTextField(title: userType == .person ? "Nombre completo" : "Nombre de la organización", text: $name, icon: "person.text.rectangle.fill", errorMessage: nameError)
+                    LabeledTextField(title: "Correo electrónico", text: $email, icon: "envelope.fill", errorMessage: emailError)
+                    LabeledTextField(title: "Contraseña", text: $password, icon: "lock.fill", isSecure: true, errorMessage: passwordError)
                 }
 
                 Button {
+                    attemptedSubmit = true
+                    guard isValid else { return }
                     goToProfileSetup = true
                 } label: {
                     Text("Continuar")
                 }
-                .buttonStyle(PrimaryGradientButtonStyle(isDisabled: !isValid))
-                .disabled(!isValid)
+                .buttonStyle(PrimaryGradientButtonStyle())
                 .padding(.top, 6)
 
                 Text("Al continuar aceptas los Términos y la Política de privacidad de ImpactMatch.")

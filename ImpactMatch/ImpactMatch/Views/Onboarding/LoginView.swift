@@ -10,6 +10,25 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var goToSignUp = false
+    @State private var attemptedSubmit = false
+
+    private var emailError: String? {
+        guard attemptedSubmit else { return nil }
+        if email.isEmpty { return "Ingresa tu correo electrónico." }
+        if !FormValidation.isValidEmail(email) { return "Ingresa un correo válido." }
+        return nil
+    }
+
+    private var passwordError: String? {
+        guard attemptedSubmit else { return nil }
+        if password.isEmpty { return "Ingresa tu contraseña." }
+        if !FormValidation.isValidPassword(password) { return "Debe tener al menos \(FormValidation.minPasswordLength) caracteres." }
+        return nil
+    }
+
+    private var isValid: Bool {
+        FormValidation.isValidEmail(email) && FormValidation.isValidPassword(password)
+    }
 
     var body: some View {
         NavigationStack {
@@ -32,8 +51,8 @@ struct LoginView: View {
                     .padding(.top, 24)
 
                     VStack(spacing: 14) {
-                        LabeledTextField(title: "Correo electrónico", text: $email, icon: "envelope.fill")
-                        LabeledTextField(title: "Contraseña", text: $password, icon: "lock.fill", isSecure: true)
+                        LabeledTextField(title: "Correo electrónico", text: $email, icon: "envelope.fill", errorMessage: emailError)
+                        LabeledTextField(title: "Contraseña", text: $password, icon: "lock.fill", isSecure: true, errorMessage: passwordError)
 
                         HStack {
                             Spacer()
@@ -44,6 +63,8 @@ struct LoginView: View {
                     }
 
                     Button {
+                        attemptedSubmit = true
+                        guard isValid else { return }
                         withAnimation { store.isLoggedIn = true }
                     } label: {
                         Text("Iniciar sesión")
@@ -77,6 +98,7 @@ struct LabeledTextField: View {
     @Binding var text: String
     var icon: String
     var isSecure: Bool = false
+    var errorMessage: String? = nil
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -94,6 +116,15 @@ struct LabeledTextField: View {
             .padding(.vertical, 12)
             .background(Color.surfaceSecondary)
             .clipShape(RoundedRectangle(cornerRadius: Layout.chipRadius, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: Layout.chipRadius, style: .continuous)
+                    .stroke(errorMessage != nil ? Color.matchLow : .clear, lineWidth: 1.5)
+            )
+            if let errorMessage {
+                Text(errorMessage)
+                    .font(.caption)
+                    .foregroundStyle(Color.matchLow)
+            }
         }
     }
 }

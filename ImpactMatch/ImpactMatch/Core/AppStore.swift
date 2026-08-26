@@ -63,14 +63,41 @@ enum MatchEngine {
 final class AppStore: ObservableObject {
 
     // Sesión
-    @Published var isLoggedIn: Bool = false
-    @Published var currentProfile: UserProfile = .mockDaniel
+    @Published var isLoggedIn: Bool = false { didSet { persist() } }
+    @Published var currentProfile: UserProfile = .mockDaniel { didSet { persist() } }
 
     // Datos
-    @Published var opportunities: [Opportunity] = Opportunity.mockList
-    @Published var savedOpportunityIDs: Set<UUID> = []
-    @Published var requests: [OpportunityRequest] = []
-    @Published var connections: [Connection] = []
+    @Published var opportunities: [Opportunity] = Opportunity.mockList { didSet { persist() } }
+    @Published var savedOpportunityIDs: Set<UUID> = [] { didSet { persist() } }
+    @Published var requests: [OpportunityRequest] = [] { didSet { persist() } }
+    @Published var connections: [Connection] = [] { didSet { persist() } }
+
+    private var isRestoring = false
+
+    init() {
+        guard let snapshot = PersistenceStore.load() else { return }
+        isRestoring = true
+        isLoggedIn = snapshot.isLoggedIn
+        currentProfile = snapshot.currentProfile
+        opportunities = snapshot.opportunities
+        savedOpportunityIDs = snapshot.savedOpportunityIDs
+        requests = snapshot.requests
+        connections = snapshot.connections
+        isRestoring = false
+    }
+
+    private func persist() {
+        guard !isRestoring else { return }
+        let snapshot = AppSnapshot(
+            isLoggedIn: isLoggedIn,
+            currentProfile: currentProfile,
+            opportunities: opportunities,
+            savedOpportunityIDs: savedOpportunityIDs,
+            requests: requests,
+            connections: connections
+        )
+        PersistenceStore.save(snapshot)
+    }
 
     // MARK: Derivados
 
@@ -125,6 +152,7 @@ final class AppStore: ObservableObject {
                     self.connections.append(Connection(opportunity: opportunity, matchPercent: match.percent))
                     self.currentProfile.connectionsCount += 1
                 }
+                NotificationManager.notifyRequestResult(opportunityTitle: opportunity.title, accepted: willAccept)
             }
         }
     }
@@ -135,5 +163,16 @@ final class AppStore: ObservableObject {
 
     func addOpportunity(_ opportunity: Opportunity) {
         opportunities.insert(opportunity, at: 0)
+    }
+
+    /// Borra todo y vuelve a los datos de ejemplo — para poder
+    /// reiniciar la demo antes de una presentación.
+    func resetToDemoDefaults() {
+        isLoggedIn = false
+        currentProfile = .mockDaniel
+        opportunities = Opportunity.mockList
+        savedOpportunityIDs = []
+        requests = []
+        connections = []
     }
 }
