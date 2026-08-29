@@ -75,7 +75,7 @@ struct UserTypeOptionCard: View {
                         .foregroundStyle(isSelected ? .white : Color.textSecondary)
                 }
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(type.rawValue).font(.cardTitle)
+                    Text(type.localizedName).font(.cardTitle)
                     Text(description).font(.caption).foregroundStyle(Color.textSecondary)
                         .multilineTextAlignment(.leading)
                 }
@@ -93,6 +93,8 @@ struct UserTypeOptionCard: View {
             .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 3)
         }
         .buttonStyle(.plain)
+        .accessibilityElement(children: .combine)
+        .accessibilityAddTraits(isSelected ? [.isSelected] : [])
     }
 }
 

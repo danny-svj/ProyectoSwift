@@ -68,7 +68,7 @@ struct RequestRow: View {
                 Text(request.opportunity.organizationName).font(.caption).foregroundStyle(Color.textSecondary)
             }
             Spacer()
-            Text(request.status.rawValue)
+            Text(request.status.localizedName)
                 .font(.caption.weight(.semibold))
                 .padding(.horizontal, 10).padding(.vertical, 5)
                 .background(statusColor.opacity(0.15))
@@ -76,6 +76,7 @@ struct RequestRow: View {
                 .clipShape(Capsule())
         }
         .cardStyle()
+        .accessibilityElement(children: .combine)
     }
 }
 
@@ -92,6 +93,7 @@ struct ConnectionRow: View {
             Image(systemName: "checkmark.seal.fill").foregroundStyle(Color.matchHigh)
         }
         .cardStyle()
+        .accessibilityElement(children: .combine)
     }
 }
 

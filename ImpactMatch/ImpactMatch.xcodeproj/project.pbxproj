@@ -18,6 +18,7 @@
 		3F85B328C2607C58223AB5DB /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552F369275D2A0A530693A7 /* AppStore.swift */; };
 		42BB71A562D0A64F5047C9F6 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9DB99FD36DF4829A1EE28C /* MainTabView.swift */; };
 		46F3F35D3956B8CD76631A4D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8947D8D0E1F8F5C88C1877C6 /* MapKit.framework */; };
+		499CF9BCBEB5613266393658 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FFB59AC3528C2B2A4F26E6A6 /* Localizable.xcstrings */; };
 		55CC14BE57EF5BE4007F48BF /* ImpactStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B9068AE80117C8BCAA91F /* ImpactStatsView.swift */; };
 		58BEE3E7678E2EB84FB4D011 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061F5998A52C52B7A3166DF /* SettingsView.swift */; };
 		5FA75FEE357F0F74762FDC2C /* ImpactMatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DAAFA41767AA615D6CAC77 /* ImpactMatchApp.swift */; };
@@ -25,6 +26,7 @@
 		62F535C56FAEAA1AB9895439 /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721A3DCC5084262981F8166E /* PersistenceStore.swift */; };
 		6F8D71D5A6715B624BA0E208 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B009023A5FDD354183F5827 /* LoginView.swift */; };
 		9EBEDB2F823F4D26861B53C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB020C9EE0EEC347DA29F82E /* Assets.xcassets */; };
+		A04FFE064C043F8E1D9A4000 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CF67D94C0AD6DF76972E84 /* Localization.swift */; };
 		AD9794D9D68550DE498CC67E /* NearMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43E8F8056D1D269CA094A3D /* NearMeView.swift */; };
 		AE9FE727B438CA2BEEB67EAE /* ProfileEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96118BE7654055A2F7332387 /* ProfileEditorView.swift */; };
 		BFBA1994699E0B7B6DD4ED41 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF604CE196DD3EEA5C3B361 /* Theme.swift */; };
@@ -65,6 +67,7 @@
 		9ED7E6008ACD4980E428252F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		9F6F50B0AC9FC164692B4573 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A6E9DF9A1AE4B74A03F9B541 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		A8CF67D94C0AD6DF76972E84 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		AB020C9EE0EEC347DA29F82E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE17335D5CA5DFB5E657CE28 /* OpportunityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityCard.swift; sourceTree = "<group>"; };
 		BCA6D3F8D6D81B0C1C2D27D3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		CE5640184035760C72B8509F /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
 		D061F5998A52C52B7A3166DF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E43E8F8056D1D269CA094A3D /* NearMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeView.swift; sourceTree = "<group>"; };
+		FFB59AC3528C2B2A4F26E6A6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		FFF604CE196DD3EEA5C3B361 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,7 @@
 			children = (
 				C552F369275D2A0A530693A7 /* AppStore.swift */,
 				CE5640184035760C72B8509F /* FormValidation.swift */,
+				A8CF67D94C0AD6DF76972E84 /* Localization.swift */,
 				00072F02A3E50C10DA9E601C /* LocationManager.swift */,
 				1A783DDE9541B2D05CF1D62A /* MockData.swift */,
 				4F00457AE177DE535C2A7D2F /* Models.swift */,
@@ -180,6 +185,7 @@
 				AB020C9EE0EEC347DA29F82E /* Assets.xcassets */,
 				18DAAFA41767AA615D6CAC77 /* ImpactMatchApp.swift */,
 				7E9F4F5E32BFD7153A803328 /* Info.plist */,
+				FFB59AC3528C2B2A4F26E6A6 /* Localizable.xcstrings */,
 				2D3530F05C17EF55FE1FEB53 /* Components */,
 				54FC58DA686D6876AA1F6271 /* Core */,
 				AB9DBFE9AFE04F7F7E2A5BD4 /* Views */,
@@ -234,11 +240,13 @@
 				};
 			};
 			buildConfigurationList = C5C6B5E9F317C1F0D6DEEB07 /* Build configuration list for PBXProject "ImpactMatch" */;
-			developmentRegion = en;
+			developmentRegion = es;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
 				en,
+				es,
+				pt,
 			);
 			mainGroup = DE10BA735D2F6AA898EAF372;
 			minimizedProjectReferenceProxies = 1;
@@ -258,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EBEDB2F823F4D26861B53C5 /* Assets.xcassets in Resources */,
+				499CF9BCBEB5613266393658 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +286,7 @@
 				6254529F6141CC7DE94D3CC9 /* HomeView.swift in Sources */,
 				5FA75FEE357F0F74762FDC2C /* ImpactMatchApp.swift in Sources */,
 				55CC14BE57EF5BE4007F48BF /* ImpactStatsView.swift in Sources */,
+				A04FFE064C043F8E1D9A4000 /* Localization.swift in Sources */,
 				E8294C3132C0B8F62010D229 /* LocationManager.swift in Sources */,
 				6F8D71D5A6715B624BA0E208 /* LoginView.swift in Sources */,
 				42BB71A562D0A64F5047C9F6 /* MainTabView.swift in Sources */,

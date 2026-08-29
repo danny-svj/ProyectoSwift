@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StatCard: View {
     let value: Int
-    let label: String
+    let label: LocalizedStringKey
     let icon: String
     var tint: Color = .brandPrimary
 
@@ -31,12 +31,13 @@ struct StatCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .cardStyle()
+        .accessibilityElement(children: .combine)
     }
 }
 
 struct SectionHeader: View {
-    let title: String
-    var actionTitle: String? = nil
+    let title: LocalizedStringKey
+    var actionTitle: LocalizedStringKey? = nil
     var action: (() -> Void)? = nil
 
     var body: some View {

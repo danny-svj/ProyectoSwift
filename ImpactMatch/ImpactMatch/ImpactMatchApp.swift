@@ -23,17 +23,20 @@ struct ImpactMatchApp: App {
 
 struct RootView: View {
     @EnvironmentObject var store: AppStore
+    @AppStorage(AppLanguage.storageKey) private var languageCode: String = AppLanguage.system.rawValue
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         Group {
             if store.isLoggedIn {
                 MainTabView()
-                    .transition(.opacity)
+                    .transition(reduceMotion ? .identity : .opacity)
             } else {
                 SplashView()
-                    .transition(.opacity)
+                    .transition(reduceMotion ? .identity : .opacity)
             }
         }
-        .animation(.easeInOut, value: store.isLoggedIn)
+        .animation(reduceMotion ? nil : .easeInOut, value: store.isLoggedIn)
+        .environment(\.locale, AppLanguage.resolvedLocale(for: languageCode))
     }
 }

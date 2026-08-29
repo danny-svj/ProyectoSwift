@@ -14,6 +14,15 @@ import CoreLocation
 enum UserType: String, Codable, CaseIterable {
     case person = "Persona"
     case organization = "Empresa / Organización"
+
+    /// Texto localizado para mostrar en pantalla. `rawValue` se queda fijo
+    /// (es lo que se guarda en disco), esto es solo lo que se traduce.
+    var localizedName: String {
+        switch self {
+        case .person: AppLanguage.localizedString("Persona")
+        case .organization: AppLanguage.localizedString("Empresa / Organización")
+        }
+    }
 }
 
 enum Modality: String, Codable, CaseIterable, Identifiable {
@@ -21,6 +30,14 @@ enum Modality: String, Codable, CaseIterable, Identifiable {
     case onsite = "Presencial"
     case hybrid = "Híbrido"
     var id: String { rawValue }
+
+    var localizedName: String {
+        switch self {
+        case .remote: AppLanguage.localizedString("Remoto")
+        case .onsite: AppLanguage.localizedString("Presencial")
+        case .hybrid: AppLanguage.localizedString("Híbrido")
+        }
+    }
 }
 
 enum OpportunityType: String, Codable, CaseIterable, Identifiable {
@@ -29,6 +46,15 @@ enum OpportunityType: String, Codable, CaseIterable, Identifiable {
     case volunteering = "Voluntariado"
     case project = "Proyecto / Colaboración"
     var id: String { rawValue }
+
+    var localizedName: String {
+        switch self {
+        case .job: AppLanguage.localizedString("Empleo")
+        case .internship: AppLanguage.localizedString("Práctica profesional")
+        case .volunteering: AppLanguage.localizedString("Voluntariado")
+        case .project: AppLanguage.localizedString("Proyecto / Colaboración")
+        }
+    }
 }
 
 // MARK: - Perfil de usuario (persona)
@@ -46,6 +72,10 @@ struct UserProfile: Identifiable, Codable {
     var location: String
     var seekingOpportunityTypes: [OpportunityType]
     var avatarSystemImage: String = "person.crop.circle.fill"
+    /// Carrera / área de estudio — opcional, se usa para el filtro
+    /// "personas de tu misma carrera" en el mapa. `nil` en perfiles
+    /// guardados antes de que existiera este campo.
+    var fieldOfStudy: String? = nil
 
     // Estadísticas de impacto propias del usuario
     var connectionsCount: Int = 0
@@ -100,6 +130,12 @@ struct MatchResult: Identifiable {
     var breakdown: MatchBreakdown
     var matchedSkills: [String]
     var percent: Int { breakdown.totalPercent }
+
+    /// Probabilidad de que la organización acepte tu solicitud — explicable,
+    /// no inventada: es el mismo porcentaje de compatibilidad que decide la
+    /// respuesta simulada en `AppStore.sendRequest` (umbral 65%), mostrado
+    /// como probabilidad en vez de un corte binario.
+    var acceptanceProbability: Int { percent }
 }
 
 // MARK: - Solicitud / interés enviado
@@ -108,6 +144,14 @@ enum RequestStatus: String, Codable {
     case pending = "Pendiente"
     case accepted = "Aceptada"
     case declined = "Rechazada"
+
+    var localizedName: String {
+        switch self {
+        case .pending: AppLanguage.localizedString("Pendiente")
+        case .accepted: AppLanguage.localizedString("Aceptada")
+        case .declined: AppLanguage.localizedString("Rechazada")
+        }
+    }
 }
 
 struct OpportunityRequest: Identifiable, Codable {
@@ -154,6 +198,9 @@ struct NearbyEntity: Identifiable {
     var tags: [String]
     var coordinate: CLLocationCoordinate2D
     var opportunity: Opportunity?
+    /// Carrera / área de estudio — solo aplica a personas, se usa
+    /// para el filtro "misma carrera que tú".
+    var fieldOfStudy: String? = nil
 }
 
 // MARK: - Catálogo de sugerencias para armar el perfil

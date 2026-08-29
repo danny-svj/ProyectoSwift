@@ -12,6 +12,7 @@ import SwiftUI
 import MapKit
 
 struct NearMeView: View {
+    @EnvironmentObject var store: AppStore
     @Environment(\.dismiss) var dismiss
     @StateObject private var locationManager = LocationManager()
 
@@ -20,16 +21,27 @@ struct NearMeView: View {
     )
     @State private var didCenterOnUser = false
     @State private var filterKind: NearbyKind?
+    @State private var sameFieldOnly = false
     @State private var selectedEntity: NearbyEntity?
 
     private var centerCoordinate: CLLocationCoordinate2D {
         locationManager.userLocation ?? LocationManager.fallbackCoordinate
     }
 
+    private var myFieldOfStudy: String? {
+        let field = store.currentProfile.fieldOfStudy?.trimmingCharacters(in: .whitespaces) ?? ""
+        return field.isEmpty ? nil : field
+    }
+
     private var entities: [NearbyEntity] {
-        let all = NearbyEntity.mockNearby(around: centerCoordinate)
-        guard let filterKind else { return all }
-        return all.filter { $0.kind == filterKind }
+        var result = NearbyEntity.mockNearby(around: centerCoordinate)
+        if let filterKind {
+            result = result.filter { $0.kind == filterKind }
+        }
+        if sameFieldOnly, let myField = myFieldOfStudy {
+            result = result.filter { $0.kind == .person && $0.fieldOfStudy?.localizedCaseInsensitiveCompare(myField) == .orderedSame }
+        }
+        return result
     }
 
     var body: some View {
@@ -48,6 +60,7 @@ struct NearMeView: View {
                         Image(systemName: "xmark.circle.fill")
                             .foregroundStyle(Color.textSecondary)
                     }
+                    .accessibilityLabel("Cerrar mapa")
                 }
             }
             .onAppear { locationManager.requestPermission() }
@@ -74,6 +87,8 @@ struct NearMeView: View {
                 Annotation(entity.name, coordinate: entity.coordinate) {
                     NearbyPin(entity: entity, isSelected: selectedEntity?.id == entity.id)
                         .onTapGesture { selectedEntity = entity }
+                        .accessibilityLabel(Text("\(entity.name), \(entity.subtitle)"))
+                        .accessibilityAddTraits(.isButton)
                 }
             }
         }
@@ -82,13 +97,17 @@ struct NearMeView: View {
     }
 
     private var filterBar: some View {
-        HStack(spacing: 8) {
-            FilterChip(title: "Todos", isSelected: filterKind == nil) { filterKind = nil }
-            FilterChip(title: "Personas", isSelected: filterKind == .person) { filterKind = .person }
-            FilterChip(title: "Organizaciones", isSelected: filterKind == .organization) { filterKind = .organization }
-            Spacer()
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                FilterChip(title: AppLanguage.localizedString("Todos"), isSelected: filterKind == nil) { filterKind = nil }
+                FilterChip(title: AppLanguage.localizedString("Personas"), isSelected: filterKind == .person) { filterKind = .person }
+                FilterChip(title: AppLanguage.localizedString("Organizaciones"), isSelected: filterKind == .organization) { filterKind = .organization }
+                if myFieldOfStudy != nil {
+                    FilterChip(title: AppLanguage.localizedString("Misma carrera"), isSelected: sameFieldOnly) { sameFieldOnly.toggle() }
+                }
+            }
+            .padding(.horizontal, Layout.screenPadding)
         }
-        .padding(.horizontal, Layout.screenPadding)
     }
 }
 
@@ -113,6 +132,7 @@ struct NearbyPin: View {
 
 struct NearbyEntityDetailView: View {
     let entity: NearbyEntity
+    @EnvironmentObject var store: AppStore
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -129,6 +149,11 @@ struct NearbyEntityDetailView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(entity.name).font(.cardTitle)
                     Text(entity.subtitle).font(.caption).foregroundStyle(Color.textSecondary)
+                    if let fieldOfStudy = entity.fieldOfStudy {
+                        Label(fieldOfStudy, systemImage: "graduationcap.fill")
+                            .font(.caption)
+                            .foregroundStyle(Color.brandAccent)
+                    }
                 }
                 Spacer()
                 Text(entity.kind == .person ? "Persona" : "Organización")
@@ -138,6 +163,7 @@ struct NearbyEntityDetailView: View {
                     .foregroundStyle(Color.brandPrimary)
                     .clipShape(Capsule())
             }
+            .accessibilityElement(children: .combine)
 
             if !entity.tags.isEmpty {
                 HStack(spacing: 6) {
@@ -146,6 +172,10 @@ struct NearbyEntityDetailView: View {
             }
 
             if let opportunity = entity.opportunity {
+                let percent = MatchEngine.result(for: store.currentProfile, opportunity: opportunity).acceptanceProbability
+                AcceptanceProbabilityBar(percent: percent)
+                    .cardStyle()
+
                 NavigationLink {
                     OpportunityDetailView(opportunity: opportunity)
                 } label: {

@@ -28,6 +28,7 @@ struct ProfileEditorView: View {
     @State private var availabilityHours: Double
     @State private var modality: Modality
     @State private var location: String
+    @State private var fieldOfStudy: String
 
     init(mode: Mode, existingProfile: UserProfile? = nil) {
         self.mode = mode
@@ -38,6 +39,7 @@ struct ProfileEditorView: View {
         _availabilityHours = State(initialValue: Double(existingProfile?.availabilityHoursPerWeek ?? 10))
         _modality = State(initialValue: existingProfile?.preferredModality ?? .hybrid)
         _location = State(initialValue: existingProfile?.location ?? "")
+        _fieldOfStudy = State(initialValue: existingProfile?.fieldOfStudy ?? "")
     }
 
     private var userType: UserType {
@@ -84,6 +86,8 @@ struct ProfileEditorView: View {
                 }
 
                 if isPerson {
+                    FormField(title: "Carrera / área de estudio (opcional)", text: $fieldOfStudy, placeholder: "ej. Ingeniería en Software")
+
                     VStack(alignment: .leading, spacing: 10) {
                         SectionHeader(title: "Disponibilidad")
                         HStack {
@@ -99,7 +103,7 @@ struct ProfileEditorView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Modalidad preferida").font(.caption).foregroundStyle(Color.textSecondary)
                     Picker("Modalidad", selection: $modality) {
-                        ForEach(Modality.allCases) { Text($0.rawValue).tag($0) }
+                        ForEach(Modality.allCases) { Text($0.localizedName).tag($0) }
                     }
                     .pickerStyle(.segmented)
                 }
@@ -131,6 +135,7 @@ struct ProfileEditorView: View {
                 }
             }
         }
+        .sensoryFeedback(.success, trigger: store.currentProfile.id)
     }
 
     private var header: some View {
@@ -148,18 +153,24 @@ struct ProfileEditorView: View {
     private func save() {
         switch mode {
         case .create(let userType, let name):
-            let resolvedName = name.isEmpty ? (userType == .person ? "Nueva persona" : "Nueva organización") : name
+            let resolvedName = name.isEmpty
+                ? (userType == .person ? AppLanguage.localizedString("Nueva persona") : AppLanguage.localizedString("Nueva organización"))
+                : name
+            let resolvedHeadline = headline.isEmpty
+                ? (userType == .person ? AppLanguage.localizedString("Nuevo en ImpactMatch") : AppLanguage.localizedString("Organización nueva en ImpactMatch"))
+                : headline
             let profile = UserProfile(
                 name: resolvedName,
                 userType: userType,
-                headline: headline.isEmpty ? (userType == .person ? "Nuevo en ImpactMatch" : "Organización nueva en ImpactMatch") : headline,
+                headline: resolvedHeadline,
                 bio: bio,
                 skills: skills,
                 interests: interests,
                 availabilityHoursPerWeek: userType == .person ? Int(availabilityHours) : 0,
                 preferredModality: modality,
-                location: location.isEmpty ? "Sin especificar" : location,
-                seekingOpportunityTypes: userType == .person ? [.internship, .project, .volunteering] : []
+                location: location.isEmpty ? AppLanguage.localizedString("Sin especificar") : location,
+                seekingOpportunityTypes: userType == .person ? [.internship, .project, .volunteering] : [],
+                fieldOfStudy: fieldOfStudy.isEmpty ? nil : fieldOfStudy
             )
             store.currentProfile = profile
             withAnimation { store.isLoggedIn = true }
@@ -173,6 +184,7 @@ struct ProfileEditorView: View {
             if isPerson { profile.availabilityHoursPerWeek = Int(availabilityHours) }
             profile.preferredModality = modality
             profile.location = location.isEmpty ? profile.location : location
+            profile.fieldOfStudy = fieldOfStudy.isEmpty ? nil : fieldOfStudy
             store.currentProfile = profile
             dismiss()
         }

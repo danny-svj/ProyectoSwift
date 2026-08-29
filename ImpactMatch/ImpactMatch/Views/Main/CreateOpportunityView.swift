@@ -31,7 +31,7 @@ struct CreateOpportunityView: View {
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Tipo de colaboración").font(.caption).foregroundStyle(Color.textSecondary)
                         Picker("Tipo", selection: $type) {
-                            ForEach(OpportunityType.allCases) { Text($0.rawValue).tag($0) }
+                            ForEach(OpportunityType.allCases) { Text($0.localizedName).tag($0) }
                         }
                         .pickerStyle(.segmented)
                     }
@@ -39,7 +39,7 @@ struct CreateOpportunityView: View {
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Modalidad").font(.caption).foregroundStyle(Color.textSecondary)
                         Picker("Modalidad", selection: $modality) {
-                            ForEach(Modality.allCases) { Text($0.rawValue).tag($0) }
+                            ForEach(Modality.allCases) { Text($0.localizedName).tag($0) }
                         }
                         .pickerStyle(.segmented)
                     }
@@ -59,8 +59,8 @@ struct CreateOpportunityView: View {
                             requiredSkills: skillsText.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) },
                             relatedInterests: interestsText.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) },
                             modality: modality,
-                            schedule: schedule.isEmpty ? "Por definir" : schedule,
-                            duration: duration.isEmpty ? "Por definir" : duration,
+                            schedule: schedule.isEmpty ? AppLanguage.localizedString("Por definir") : schedule,
+                            duration: duration.isEmpty ? AppLanguage.localizedString("Por definir") : duration,
                             requirements: requirements
                         )
                         store.addOpportunity(newOpportunity)
@@ -70,6 +70,7 @@ struct CreateOpportunityView: View {
                     }
                     .buttonStyle(PrimaryGradientButtonStyle(isDisabled: !isValid))
                     .disabled(!isValid)
+                    .sensoryFeedback(.success, trigger: store.opportunities.count)
                 }
                 .padding(Layout.screenPadding)
             }
@@ -85,9 +86,9 @@ struct CreateOpportunityView: View {
 }
 
 struct FormField: View {
-    let title: String
+    let title: LocalizedStringKey
     @Binding var text: String
-    var placeholder: String = ""
+    var placeholder: LocalizedStringKey = ""
     var multiline: Bool = false
 
     var body: some View {

@@ -33,6 +33,7 @@ struct ProfileView: View {
                         }
                     }
                     .padding(.top, 12)
+                    .accessibilityElement(children: .combine)
 
                     HStack(spacing: 12) {
                         MiniStat(icon: "person.2.fill", value: store.currentProfile.connectionsCount, label: "Conexiones")
@@ -63,8 +64,11 @@ struct ProfileView: View {
                     VStack(alignment: .leading, spacing: 12) {
                         SectionHeader(title: "Preferencias")
                         DetailRow(icon: "clock.fill", title: "Disponibilidad", value: "\(store.currentProfile.availabilityHoursPerWeek)h / semana")
-                        DetailRow(icon: "location.fill", title: "Modalidad preferida", value: store.currentProfile.preferredModality.rawValue)
-                        DetailRow(icon: "target", title: "Busca", value: store.currentProfile.seekingOpportunityTypes.map(\.rawValue).joined(separator: ", "))
+                        DetailRow(icon: "location.fill", title: "Modalidad preferida", value: store.currentProfile.preferredModality.localizedName)
+                        DetailRow(icon: "target", title: "Busca", value: store.currentProfile.seekingOpportunityTypes.map(\.localizedName).joined(separator: ", "))
+                        if let fieldOfStudy = store.currentProfile.fieldOfStudy, !fieldOfStudy.isEmpty {
+                            DetailRow(icon: "graduationcap.fill", title: "Carrera", value: fieldOfStudy)
+                        }
                     }
                     .cardStyle()
                 }
@@ -78,9 +82,11 @@ struct ProfileView: View {
                         Button { showEditProfile = true } label: {
                             Image(systemName: "pencil")
                         }
+                        .accessibilityLabel("Editar perfil")
                         Button { showSettings = true } label: {
                             Image(systemName: "gearshape.fill")
                         }
+                        .accessibilityLabel("Configuración")
                     }
                 }
             }

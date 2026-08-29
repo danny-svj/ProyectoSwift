@@ -11,17 +11,27 @@ struct SettingsView: View {
     @State private var notificationsEnabled = true
     @State private var showConfirmLogout = false
     @State private var showConfirmReset = false
+    @AppStorage(AppLanguage.storageKey) private var languageCode: String = AppLanguage.system.rawValue
 
     var body: some View {
         NavigationStack {
             Form {
                 Section("Cuenta") {
                     LabeledContent("Nombre", value: store.currentProfile.name)
-                    LabeledContent("Tipo de cuenta", value: store.currentProfile.userType.rawValue)
+                    LabeledContent("Tipo de cuenta", value: store.currentProfile.userType.localizedName)
                 }
 
-                Section("Preferencias") {
+                Section {
                     Toggle("Notificaciones", isOn: $notificationsEnabled)
+                    Picker("Idioma", selection: $languageCode) {
+                        ForEach(AppLanguage.allCases) { language in
+                            Text(language.displayName).tag(language.rawValue)
+                        }
+                    }
+                } header: {
+                    Text("Preferencias")
+                } footer: {
+                    Text("Cambia el idioma de inmediato, sin reiniciar la app.")
                 }
 
                 Section("Acerca de ImpactMatch") {

@@ -18,10 +18,12 @@ enum NotificationManager {
 
     static func notifyRequestResult(opportunityTitle: String, accepted: Bool) {
         let content = UNMutableNotificationContent()
-        content.title = accepted ? "¡Nueva conexión! 🎉" : "Actualización de tu solicitud"
+        content.title = accepted
+            ? AppLanguage.localizedString("¡Nueva conexión! 🎉")
+            : AppLanguage.localizedString("Actualización de tu solicitud")
         content.body = accepted
-            ? "\"\(opportunityTitle)\" aceptó tu solicitud. Revisa tus Conexiones."
-            : "\"\(opportunityTitle)\" no continuó esta vez."
+            ? AppLanguage.localizedString("\"\(opportunityTitle)\" aceptó tu solicitud. Revisa tus Conexiones.")
+            : AppLanguage.localizedString("\"\(opportunityTitle)\" no continuó esta vez.")
         content.sound = .default
 
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)

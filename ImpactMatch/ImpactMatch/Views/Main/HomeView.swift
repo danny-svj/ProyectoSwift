@@ -68,14 +68,16 @@ struct HomeView: View {
                 Image(systemName: store.currentProfile.avatarSystemImage)
                     .foregroundStyle(.white)
             }
+            .accessibilityHidden(true)
         }
+        .accessibilityElement(children: .combine)
     }
 }
 
 struct MiniStat: View {
     let icon: String
     let value: Int
-    let label: String
+    let label: LocalizedStringKey
     var body: some View {
         VStack(spacing: 6) {
             Image(systemName: icon).foregroundStyle(Color.brandPrimary)
@@ -86,6 +88,7 @@ struct MiniStat: View {
         .padding(.vertical, 12)
         .background(Color.surfaceCard)
         .clipShape(RoundedRectangle(cornerRadius: Layout.chipRadius, style: .continuous))
+        .accessibilityElement(children: .combine)
     }
 }
 
@@ -109,6 +112,7 @@ struct ImpactBanner: View {
         .padding(18)
         .background(LinearGradient.impactGradient)
         .clipShape(RoundedRectangle(cornerRadius: Layout.cardRadius, style: .continuous))
+        .accessibilityElement(children: .combine)
     }
 }
 

@@ -32,6 +32,8 @@ struct SelectableChip: View {
             .clipShape(Capsule())
         }
         .buttonStyle(.plain)
+        .accessibilityAddTraits(isOn ? [.isSelected] : [])
+        .accessibilityHint(isOn ? "Toca dos veces para quitar" : "Toca dos veces para agregar")
     }
 }
 
@@ -39,7 +41,7 @@ struct TagSelector: View {
     let suggestions: [String]
     @Binding var selected: [String]
     var color: Color = .brandPrimary
-    var placeholder: String = "Agregar otra..."
+    var placeholder: LocalizedStringKey = "Agregar otra..."
 
     @State private var customText = ""
 
@@ -75,6 +77,7 @@ struct TagSelector: View {
                         .foregroundStyle(customText.trimmingCharacters(in: .whitespaces).isEmpty ? Color.gray.opacity(0.3) : color)
                 }
                 .disabled(customText.trimmingCharacters(in: .whitespaces).isEmpty)
+                .accessibilityLabel("Agregar")
             }
         }
     }

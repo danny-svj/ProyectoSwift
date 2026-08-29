@@ -1,0 +1,1002 @@
+{
+  "sourceLanguage" : "es",
+  "strings" : {
+    "Actualización de tu solicitud" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Update on your request" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Atualização da sua solicitação" } }
+      }
+    },
+    "Aceptada" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Accepted" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Aceita" } }
+      }
+    },
+    "Agrega al menos una habilidad para continuar." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add at least one skill to continue." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Adicione pelo menos uma habilidade para continuar." } }
+      }
+    },
+    "Agregar" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Adicionar" } }
+      }
+    },
+    "Agregar otra habilidad..." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add another skill..." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Adicionar outra habilidade..." } }
+      }
+    },
+    "Agregar otro interés..." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add another interest..." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Adicionar outro interesse..." } }
+      }
+    },
+    "Al continuar aceptas los Términos y la Política de privacidad de ImpactMatch." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "By continuing you accept ImpactMatch's Terms and Privacy Policy." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Ao continuar você aceita os Termos e a Política de Privacidade do ImpactMatch." } }
+      }
+    },
+    "alianzas creadas gracias a la comunidad ImpactMatch" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "alliances created thanks to the ImpactMatch community" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "alianças criadas graças à comunidade ImpactMatch" } }
+      }
+    },
+    "Alianzas creadas" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Alliances created" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Alianças criadas" } }
+      }
+    },
+    "alta" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "high" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "alta" } }
+      }
+    },
+    "Ayuda a las personas a entender qué pueden aportar contigo." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Help people understand what they can contribute with you." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Ajude as pessoas a entender o que podem contribuir com você." } }
+      }
+    },
+    "baja" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "low" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "baixa" } }
+      }
+    },
+    "Biografía" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Bio" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Biografia" } }
+      }
+    },
+    "Bienvenido de vuelta" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Welcome back" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Bem-vindo de volta" } }
+      }
+    },
+    "Borra tu perfil, oportunidades creadas, solicitudes y conexiones, y vuelve a los datos de ejemplo. Útil antes de una presentación." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Erases your profile, created opportunities, requests, and connections, and goes back to the sample data. Useful before a presentation." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Apaga seu perfil, oportunidades criadas, solicitações e conexões, e volta aos dados de exemplo. Útil antes de uma apresentação." } }
+      }
+    },
+    "Buscar oportunidades..." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search opportunities..." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Buscar oportunidades..." } }
+      }
+    },
+    "Busca" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Looking for" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Procura" } }
+      }
+    },
+    "Cambia el idioma de inmediato, sin reiniciar la app." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Changes the language immediately, no app restart needed." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Muda o idioma imediatamente, sem reiniciar o app." } }
+      }
+    },
+    "Cancelar" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Cancel" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Cancelar" } }
+      }
+    },
+    "Carrera" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Field of study" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Curso" } }
+      }
+    },
+    "Carrera / área de estudio (opcional)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Field of study (optional)" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Curso / área de estudo (opcional)" } }
+      }
+    },
+    "Causas que apoyas" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Causes you support" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Causas que você apoia" } }
+      }
+    },
+    "Cerca de mí" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Near me" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Perto de mim" } }
+      }
+    },
+    "Cerrar" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Close" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Fechar" } }
+      }
+    },
+    "Cerrar mapa" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Close map" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Fechar mapa" } }
+      }
+    },
+    "Cerrar sesión" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Log out" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sair da conta" } }
+      }
+    },
+    "¿Cerrar sesión?" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Log out?" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sair da conta?" } }
+      }
+    },
+    "Compatibilidad explicada" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Compatibility explained" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Compatibilidade explicada" } }
+      }
+    },
+    "Conecta talento con propósito" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Connecting talent with purpose" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Conectando talento com propósito" } }
+      }
+    },
+    "Conexiones" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Connections" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Conexões" } }
+      }
+    },
+    "Configuración" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Settings" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Configurações" } }
+      }
+    },
+    "Contraseña" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Password" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Senha" } }
+      }
+    },
+    "Continuar" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Continue" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Continuar" } }
+      }
+    },
+    "Correo electrónico" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Email" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "E-mail" } }
+      }
+    },
+    "Cómo contribuyes tú" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "How you contribute" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Como você contribui" } }
+      }
+    },
+    "¿Cómo quieres usar ImpactMatch?" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "How do you want to use ImpactMatch?" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Como você quer usar o ImpactMatch?" } }
+      }
+    },
+    "Crea tu cuenta" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Create your account" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Crie sua conta" } }
+      }
+    },
+    "Crear una cuenta nueva" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Create a new account" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Criar uma conta nova" } }
+      }
+    },
+    "Cuando apliques a una oportunidad, aparecerá aquí." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "When you apply to an opportunity, it'll show up here." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Quando você se candidatar a uma oportunidade, ela aparecerá aqui." } }
+      }
+    },
+    "Cuéntale a otros quién eres y qué buscas" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tell others who you are and what you're looking for" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Conte aos outros quem você é e o que procura" } }
+      }
+    },
+    "Cuéntanos de ti (opcional)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tell us about yourself (optional)" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Conte-nos sobre você (opcional)" } }
+      }
+    },
+    "Descripción" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Description" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Descrição" } }
+      }
+    },
+    "Detalle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Detail" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Detalhe" } }
+      }
+    },
+    "Detalles" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Details" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Detalhes" } }
+      }
+    },
+    "Disponibilidad" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Availability" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Disponibilidade" } }
+      }
+    },
+    "Duración" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Duration" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Duração" } }
+      }
+    },
+    "Editar perfil" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Edit profile" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Editar perfil" } }
+      }
+    },
+    "ej. 3 meses" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "e.g. 3 months" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "ex. 3 meses" } }
+      }
+    },
+    "ej. Ciudad de México, MX" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "e.g. Mexico City, MX" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "ex. Cidade do México, MX" } }
+      }
+    },
+    "ej. Desarrollador SwiftUI" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "e.g. SwiftUI Developer" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "ex. Desenvolvedor(a) SwiftUI" } }
+      }
+    },
+    "ej. Estudiante de Ing. en Software" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "e.g. Software Engineering student" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "ex. Estudante de Engenharia de Software" } }
+      }
+    },
+    "ej. Ingeniería en Software" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "e.g. Software Engineering" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "ex. Engenharia de Software" } }
+      }
+    },
+    "ej. Medio tiempo, 15h/semana" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "e.g. Part-time, 15h/week" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "ex. Meio período, 15h/semana" } }
+      }
+    },
+    "ej. ONG de educación tecnológica" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "e.g. Tech education nonprofit" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "ex. ONG de educação tecnológica" } }
+      }
+    },
+    "El impacto de ImpactMatch" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "ImpactMatch's impact" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "O impacto do ImpactMatch" } }
+      }
+    },
+    "Elige o agrega las que te representen — así calculamos qué tan compatible eres con cada oportunidad." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose or add the ones that represent you — that's how we calculate how compatible you are with each opportunity." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Escolha ou adicione as que te representam — é assim que calculamos sua compatibilidade com cada oportunidade." } }
+      }
+    },
+    "Empleo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Job" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Emprego" } }
+      }
+    },
+    "Empresa / Organización" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Company / Organization" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Empresa / Organização" } }
+      }
+    },
+    "Encuentra tu próxima alianza" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Find your next alliance" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Encontre sua próxima aliança" } }
+      }
+    },
+    "Esto es lo que usamos para calcular tu compatibilidad — puedes editarlo después." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This is what we use to calculate your compatibility — you can edit it later." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "É isso que usamos para calcular sua compatibilidade — você pode editar depois." } }
+      }
+    },
+    "Esto no se puede deshacer." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This can't be undone." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Isso não pode ser desfeito." } }
+      }
+    },
+    "Esto nos ayuda a personalizar tu experiencia" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "This helps us personalize your experience" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Isso nos ajuda a personalizar sua experiência" } }
+      }
+    },
+    "Estos números representan cómo ImpactMatch conecta personas, empresas y organizaciones para construir alianzas reales alineadas al ODS 17." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "These numbers represent how ImpactMatch connects people, companies, and organizations to build real alliances aligned with SDG 17." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Estes números representam como o ImpactMatch conecta pessoas, empresas e organizações para construir alianças reais alinhadas ao ODS 17." } }
+      }
+    },
+    "Explorar" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Explore" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Explorar" } }
+      }
+    },
+    "Guardar oportunidad" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Save opportunity" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Salvar oportunidade" } }
+      }
+    },
+    "Habilidades" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Skills" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Habilidades" } }
+      }
+    },
+    "Habilidades necesarias (separadas por coma)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Required skills (comma-separated)" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Habilidades necessárias (separadas por vírgula)" } }
+      }
+    },
+    "Habilidades requeridas" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Required skills" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Habilidades exigidas" } }
+      }
+    },
+    "Horario" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Schedule" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Horário" } }
+      }
+    },
+    "Híbrido" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hybrid" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Híbrido" } }
+      }
+    },
+    "Idioma" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Language" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Idioma" } }
+      }
+    },
+    "Idioma del sistema" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "System language" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Idioma do sistema" } }
+      }
+    },
+    "Impacto" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Impact" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Impacto" } }
+      }
+    },
+    "Impacto de la comunidad" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Community impact" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Impacto da comunidade" } }
+      }
+    },
+    "Ingresa el nombre de la organización." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter the organization's name." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Digite o nome da organização." } }
+      }
+    },
+    "Ingresa tu contraseña." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter your password." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Digite sua senha." } }
+      }
+    },
+    "Ingresa tu correo electrónico." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter your email." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Digite seu e-mail." } }
+      }
+    },
+    "Ingresa tu nombre." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter your name." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Digite seu nome." } }
+      }
+    },
+    "Ingresa un correo válido." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter a valid email." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Digite um e-mail válido." } }
+      }
+    },
+    "Inicio" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Home" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Início" } }
+      }
+    },
+    "Inicia sesión para seguir creando alianzas" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Log in to keep creating alliances" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Entre para continuar criando alianças" } }
+      }
+    },
+    "Iniciar sesión" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Log in" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Entrar" } }
+      }
+    },
+    "ImpactMatch — Conecta talento con propósito" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "ImpactMatch — Connecting talent with purpose" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "ImpactMatch — Conectando talento com propósito" } }
+      }
+    },
+    "Intereses" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Interests" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Interesses" } }
+      }
+    },
+    "Intereses relacionados (separadas por coma)" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Related interests (comma-separated)" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Interesses relacionados (separados por vírgula)" } }
+      }
+    },
+    "La mensajería directa llega en una próxima versión — por ahora puedes verla en el mapa." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Direct messaging is coming in a future version — for now you can see it on the map." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "As mensagens diretas chegam em uma próxima versão — por enquanto você pode vê-la no mapa." } }
+      }
+    },
+    "La organización no continuó esta vez" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "The organization didn't move forward this time" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "A organização não seguiu em frente desta vez" } }
+      }
+    },
+    "Listo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Done" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Pronto" } }
+      }
+    },
+    "Lo que ofrece tu organización" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "What your organization offers" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "O que sua organização oferece" } }
+      }
+    },
+    "Matches" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Matches" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Matches" } }
+      }
+    },
+    "Matches realizados" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Matches made" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Matches realizados" } }
+      }
+    },
+    "Mejores compatibilidades para ti" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Best matches for you" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Melhores compatibilidades para você" } }
+      }
+    },
+    "media" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "medium" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "média" } }
+      }
+    },
+    "Misma carrera" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Same major" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Mesmo curso" } }
+      }
+    },
+    "Modalidad" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Format" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Modalidade" } }
+      }
+    },
+    "Modalidad preferida" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Preferred format" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Modalidade preferida" } }
+      }
+    },
+    "Mostrar interés / Aplicar" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Show interest / Apply" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Mostrar interesse / Candidatar-se" } }
+      }
+    },
+    "No especificados" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Not specified" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Não especificados" } }
+      }
+    },
+    "Nombre completo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Full name" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Nome completo" } }
+      }
+    },
+    "Nombre de la organización" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Organization name" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Nome da organização" } }
+      }
+    },
+    "Nueva organización" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New organization" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Nova organização" } }
+      }
+    },
+    "Nueva oportunidad" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New opportunity" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Nova oportunidade" } }
+      }
+    },
+    "Nueva persona" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New person" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Nova pessoa" } }
+      }
+    },
+    "Nuevo en ImpactMatch" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New to ImpactMatch" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Novo no ImpactMatch" } }
+      }
+    },
+    "o" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "or" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "ou" } }
+      }
+    },
+    "ODS 17 · Alianzas para lograr los objetivos" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "SDG 17 · Partnerships for the goals" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "ODS 17 · Parcerias para os objetivos" } }
+      }
+    },
+    "¿Olvidaste tu contraseña?" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Forgot your password?" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Esqueceu sua senha?" } }
+      }
+    },
+    "Opcional" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Optional" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Opcional" } }
+      }
+    },
+    "Oportunidades publicadas" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Opportunities posted" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Oportunidades publicadas" } }
+      }
+    },
+    "Organización nueva en ImpactMatch" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New organization on ImpactMatch" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Organização nova no ImpactMatch" } }
+      }
+    },
+    "Organizaciones" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Organizations" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Organizações" } }
+      }
+    },
+    "Pendiente" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pending" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Pendente" } }
+      }
+    },
+    "Perfil" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Profile" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Perfil" } }
+      }
+    },
+    "Personas" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "People" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Pessoas" } }
+      }
+    },
+    "Personas conectadas" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "People connected" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Pessoas conectadas" } }
+      }
+    },
+    "Persona" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Individual" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Pessoa" } }
+      }
+    },
+    "Por definir" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "To be defined" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "A definir" } }
+      }
+    },
+    "Práctica profesional" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Internship" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Estágio" } }
+      }
+    },
+    "Preferencias" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Preferences" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Preferências" } }
+      }
+    },
+    "Presencial" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "On-site" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Presencial" } }
+      }
+    },
+    "Probabilidad de ser aceptado" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Chance of being accepted" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Chance de ser aceito" } }
+      }
+    },
+    "Proyecto / Colaboración" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Project / Collaboration" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Projeto / Colaboração" } }
+      }
+    },
+    "Proyectos" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Projects" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Projetos" } }
+      }
+    },
+    "Proyectos completados" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Projects completed" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Projetos concluídos" } }
+      }
+    },
+    "Prueba con otro término o filtro." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Try another term or filter." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Tente outro termo ou filtro." } }
+      }
+    },
+    "Publicar nueva oportunidad" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Post new opportunity" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Publicar nova oportunidade" } }
+      }
+    },
+    "Publicar oportunidad" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Post opportunity" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Publicar oportunidade" } }
+      }
+    },
+    "¿Qué se hará y por qué importa?" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "What will be done and why does it matter?" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "O que será feito e por que importa?" } }
+      }
+    },
+    "Qué hace tu organización" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "What your organization does" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "O que sua organização faz" } }
+      }
+    },
+    "Quitar de guardados" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remove from saved" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Remover dos salvos" } }
+      }
+    },
+    "Rechazada" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Declined" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Recusada" } }
+      }
+    },
+    "Registro" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sign up" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Cadastro" } }
+      }
+    },
+    "Remoto" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remote" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Remoto" } }
+      }
+    },
+    "Requisitos" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Requirements" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Requisitos" } }
+      }
+    },
+    "Requisitos adicionales" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Additional requirements" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Requisitos adicionais" } }
+      }
+    },
+    "Restablecer" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Reset" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Redefinir" } }
+      }
+    },
+    "Restablecer datos de la demo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Reset demo data" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Redefinir dados da demonstração" } }
+      }
+    },
+    "¿Restablecer todos los datos?" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Reset all data?" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Redefinir todos os dados?" } }
+      }
+    },
+    "Sin conexiones aún" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No connections yet" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Ainda sem conexões" } }
+      }
+    },
+    "Sin especificar" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Not specified" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Não especificado" } }
+      }
+    },
+    "Sin resultados" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No results" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sem resultados" } }
+      }
+    },
+    "Sin solicitudes" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No requests" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sem solicitações" } }
+      }
+    },
+    "Sobre mí" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "About me" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sobre mim" } }
+      }
+    },
+    "Solicitud enviada — esperando respuesta" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Request sent — awaiting response" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Solicitação enviada — aguardando resposta" } }
+      }
+    },
+    "Solicitudes" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Requests" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Solicitações" } }
+      }
+    },
+    "Sostenibilidad, Educación" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sustainability, Education" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sustentabilidade, Educação" } }
+      }
+    },
+    "Swift, SwiftUI, Diseño" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Swift, SwiftUI, Design" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Swift, SwiftUI, Design" } }
+      }
+    },
+    "Título de la oportunidad" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Opportunity title" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Título da oportunidade" } }
+      }
+    },
+    "Titular" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Headline" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Título" } }
+      }
+    },
+    "Toca dos veces para agregar" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Double tap to add" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Toque duas vezes para adicionar" } }
+      }
+    },
+    "Toca dos veces para quitar" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Double tap to remove" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Toque duas vezes para remover" } }
+      }
+    },
+    "Todas" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "All" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Todas" } }
+      }
+    },
+    "Todos" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "All" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Todos" } }
+      }
+    },
+    "Tipo" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Type" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Tipo" } }
+      }
+    },
+    "Tipo de colaboración" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Collaboration type" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Tipo de colaboração" } }
+      }
+    },
+    "Tus alianzas confirmadas aparecerán aquí." : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Your confirmed alliances will appear here." } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Suas alianças confirmadas aparecerão aqui." } }
+      }
+    },
+    "Tus conexiones" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Your connections" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Suas conexões" } }
+      }
+    },
+    "Tus habilidades" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Your skills" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Suas habilidades" } }
+      }
+    },
+    "Tus intereses" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Your interests" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Seus interesses" } }
+      }
+    },
+    "Tus matches" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Your matches" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Seus matches" } }
+      }
+    },
+    "Ubicación" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Location" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Localização" } }
+      }
+    },
+    "Ver mapa de cerca de mí" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "View near-me map" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Ver mapa de perto de mim" } }
+      }
+    },
+    "Ver oportunidad" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "View opportunity" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Ver oportunidade" } }
+      }
+    },
+    "Voluntariado" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Volunteering" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Voluntariado" } }
+      }
+    },
+    "¡Conexión creada! Revisa tus Conexiones" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Connection made! Check your Connections" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Conexão criada! Confira suas Conexões" } }
+      }
+    },
+    "¡Nueva conexión! 🎉" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New connection! 🎉" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Nova conexão! 🎉" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

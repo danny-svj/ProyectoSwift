@@ -60,19 +60,35 @@ extension Color {
         default: return .matchLow
         }
     }
+
+    /// Palabra que describe el nivel de compatibilidad, para no depender
+    /// solo del color (daltonismo) — se lee en voz alta con VoiceOver
+    /// y puede mostrarse como texto además del color.
+    static func matchTierLabel(for score: Int) -> String {
+        switch score {
+        case 85...100: AppLanguage.localizedString("alta")
+        case 60..<85: AppLanguage.localizedString("media")
+        default: AppLanguage.localizedString("baja")
+        }
+    }
 }
 
 // MARK: - Tipografía
+//
+// Todas se basan en los estilos semánticos del sistema (.title, .body...)
+// en vez de tamaños fijos en puntos, así escalan automáticamente con el
+// ajuste de tamaño de texto del usuario (Accessibility > Larger Text) —
+// importante para baja visión.
 
 extension Font {
-    static let displayTitle = Font.system(size: 32, weight: .bold, design: .rounded)
-    static let screenTitle = Font.system(size: 24, weight: .bold, design: .rounded)
-    static let sectionTitle = Font.system(size: 18, weight: .semibold, design: .rounded)
-    static let cardTitle = Font.system(size: 16, weight: .semibold, design: .rounded)
-    static let bodyRegular = Font.system(size: 15, weight: .regular)
-    static let bodyMedium = Font.system(size: 15, weight: .medium)
-    static let caption = Font.system(size: 12, weight: .medium)
-    static let statNumber = Font.system(size: 26, weight: .bold, design: .rounded)
+    static let displayTitle = Font.system(.largeTitle, design: .rounded).weight(.bold)
+    static let screenTitle = Font.system(.title, design: .rounded).weight(.bold)
+    static let sectionTitle = Font.system(.title3, design: .rounded).weight(.semibold)
+    static let cardTitle = Font.system(.headline, design: .rounded).weight(.semibold)
+    static let bodyRegular = Font.system(.body)
+    static let bodyMedium = Font.system(.body).weight(.medium)
+    static let caption = Font.system(.caption).weight(.medium)
+    static let statNumber = Font.system(.title2, design: .rounded).weight(.bold)
 }
 
 // MARK: - Espaciado y radios consistentes

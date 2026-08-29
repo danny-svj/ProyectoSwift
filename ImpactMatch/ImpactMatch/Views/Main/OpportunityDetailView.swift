@@ -23,6 +23,8 @@ struct OpportunityDetailView: View {
                     MatchBreakdownRow(label: "Intereses", value: match.breakdown.interestsScore, weightPercent: 20)
                     MatchBreakdownRow(label: "Disponibilidad", value: match.breakdown.availabilityScore, weightPercent: 15)
                     MatchBreakdownRow(label: "Modalidad", value: match.breakdown.modalityScore, weightPercent: 15)
+                    Divider()
+                    AcceptanceProbabilityBar(percent: match.acceptanceProbability)
                 }
                 .cardStyle()
 
@@ -44,10 +46,10 @@ struct OpportunityDetailView: View {
 
                 VStack(alignment: .leading, spacing: 12) {
                     SectionHeader(title: "Detalles")
-                    DetailRow(icon: "location.fill", title: "Modalidad", value: opportunity.modality.rawValue)
+                    DetailRow(icon: "location.fill", title: "Modalidad", value: opportunity.modality.localizedName)
                     DetailRow(icon: "clock.fill", title: "Horario", value: opportunity.schedule)
                     DetailRow(icon: "calendar", title: "Duración", value: opportunity.duration)
-                    DetailRow(icon: "checkmark.seal.fill", title: "Requisitos", value: opportunity.requirements.isEmpty ? "No especificados" : opportunity.requirements)
+                    DetailRow(icon: "checkmark.seal.fill", title: "Requisitos", value: opportunity.requirements.isEmpty ? AppLanguage.localizedString("No especificados") : opportunity.requirements)
                 }
                 .cardStyle()
 
@@ -62,8 +64,11 @@ struct OpportunityDetailView: View {
                 Button { store.toggleSaved(opportunity) } label: {
                     Image(systemName: store.isSaved(opportunity) ? "bookmark.fill" : "bookmark")
                 }
+                .accessibilityLabel(store.isSaved(opportunity) ? "Quitar de guardados" : "Guardar oportunidad")
             }
         }
+        .sensoryFeedback(.selection, trigger: store.isSaved(opportunity))
+        .sensoryFeedback(.success, trigger: alreadyRequested)
     }
 
     var header: some View {
@@ -95,6 +100,7 @@ struct OpportunityDetailView: View {
                 .padding(.vertical, 16)
                 .background(Color.surfaceSecondary)
                 .clipShape(RoundedRectangle(cornerRadius: Layout.buttonRadius, style: .continuous))
+                .accessibilityElement(children: .combine)
             } else {
                 Button {
                     store.sendRequest(for: opportunity)
@@ -108,16 +114,16 @@ struct OpportunityDetailView: View {
 
     func statusText(_ status: RequestStatus) -> String {
         switch status {
-        case .pending: return "Solicitud enviada — esperando respuesta"
-        case .accepted: return "¡Conexión creada! Revisa tus Conexiones"
-        case .declined: return "La organización no continuó esta vez"
+        case .pending: AppLanguage.localizedString("Solicitud enviada — esperando respuesta")
+        case .accepted: AppLanguage.localizedString("¡Conexión creada! Revisa tus Conexiones")
+        case .declined: AppLanguage.localizedString("La organización no continuó esta vez")
         }
     }
 }
 
 struct DetailRow: View {
     let icon: String
-    let title: String
+    let title: LocalizedStringKey
     let value: String
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
@@ -126,6 +132,7 @@ struct DetailRow: View {
             Spacer()
             Text(value).font(.bodyMedium).multilineTextAlignment(.trailing)
         }
+        .accessibilityElement(children: .combine)
     }
 }
 

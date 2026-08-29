@@ -18,22 +18,23 @@ struct SignUpView: View {
 
     private var nameError: String? {
         guard attemptedSubmit else { return nil }
-        return name.trimmingCharacters(in: .whitespaces).isEmpty
-            ? (userType == .person ? "Ingresa tu nombre." : "Ingresa el nombre de la organización.")
-            : nil
+        guard name.trimmingCharacters(in: .whitespaces).isEmpty else { return nil }
+        return userType == .person
+            ? AppLanguage.localizedString("Ingresa tu nombre.")
+            : AppLanguage.localizedString("Ingresa el nombre de la organización.")
     }
 
     private var emailError: String? {
         guard attemptedSubmit else { return nil }
-        if email.isEmpty { return "Ingresa tu correo electrónico." }
-        if !FormValidation.isValidEmail(email) { return "Ingresa un correo válido." }
+        if email.isEmpty { return AppLanguage.localizedString("Ingresa tu correo electrónico.") }
+        if !FormValidation.isValidEmail(email) { return AppLanguage.localizedString("Ingresa un correo válido.") }
         return nil
     }
 
     private var passwordError: String? {
         guard attemptedSubmit else { return nil }
-        if password.isEmpty { return "Ingresa tu contraseña." }
-        if !FormValidation.isValidPassword(password) { return "Debe tener al menos \(FormValidation.minPasswordLength) caracteres." }
+        if password.isEmpty { return AppLanguage.localizedString("Ingresa tu contraseña.") }
+        if !FormValidation.isValidPassword(password) { return AppLanguage.localizedString("Debe tener al menos \(FormValidation.minPasswordLength) caracteres.") }
         return nil
     }
 

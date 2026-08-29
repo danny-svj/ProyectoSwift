@@ -36,7 +36,7 @@ struct TypeTag: View {
     }
 
     var body: some View {
-        Label(type.rawValue, systemImage: icon)
+        Label(type.localizedName, systemImage: icon)
             .font(.caption.weight(.semibold))
             .padding(.horizontal, 10)
             .padding(.vertical, 5)
@@ -64,6 +64,7 @@ struct OpportunityCard: View {
                                 .foregroundStyle(isSaved ? Color.brandPrimary : Color.textTertiary)
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(isSaved ? "Quitar de guardados" : "Guardar oportunidad")
                     }
                 }
 
@@ -87,7 +88,7 @@ struct OpportunityCard: View {
                 }
 
                 HStack(spacing: 14) {
-                    Label(opportunity.modality.rawValue, systemImage: "location.fill")
+                    Label(opportunity.modality.localizedName, systemImage: "location.fill")
                     Label(opportunity.duration, systemImage: "calendar")
                 }
                 .font(.caption)
@@ -102,6 +103,7 @@ struct OpportunityCard: View {
             }
         }
         .cardStyle()
+        .accessibilityElement(children: .combine)
     }
 }
 

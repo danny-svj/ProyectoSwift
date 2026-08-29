@@ -20,7 +20,8 @@ extension UserProfile {
         availabilityHoursPerWeek: 12,
         preferredModality: .hybrid,
         location: "Ciudad de México, MX",
-        seekingOpportunityTypes: [.internship, .project, .volunteering]
+        seekingOpportunityTypes: [.internship, .project, .volunteering],
+        fieldOfStudy: "Ingeniería en Software"
     )
 }
 
@@ -92,13 +93,13 @@ extension Opportunity {
 // MARK: - Personas cerca de ti (mock, para el mapa "Cerca de mí")
 
 extension NearbyEntity {
-    private static let mockPeople: [(name: String, subtitle: String, tags: [String], icon: String)] = [
-        ("Camila Torres", "Diseñadora UX", ["Diseño", "UX/UI"], "paintbrush.fill"),
-        ("Luis Hernández", "Desarrollador backend", ["Programación", "AWS"], "chevron.left.forwardslash.chevron.right"),
-        ("Ana Ramírez", "Voluntaria social", ["Educación", "Trabajo en equipo"], "person.fill"),
-        ("Jorge Paredes", "Estudiante de diseño", ["Diseño", "Branding"], "paintpalette.fill"),
-        ("Sofía Delgado", "Product manager jr.", ["Gestión de proyectos", "Liderazgo"], "chart.bar.fill"),
-        ("Renata Solís", "Fotógrafa y video", ["Fotografía", "Video"], "camera.fill"),
+    private static let mockPeople: [(name: String, subtitle: String, tags: [String], icon: String, fieldOfStudy: String)] = [
+        ("Camila Torres", "Diseñadora UX", ["Diseño", "UX/UI"], "paintbrush.fill", "Diseño Gráfico"),
+        ("Luis Hernández", "Desarrollador backend", ["Programación", "AWS"], "chevron.left.forwardslash.chevron.right", "Ingeniería en Software"),
+        ("Ana Ramírez", "Voluntaria social", ["Educación", "Trabajo en equipo"], "person.fill", "Trabajo Social"),
+        ("Jorge Paredes", "Estudiante de diseño", ["Diseño", "Branding"], "paintpalette.fill", "Diseño Gráfico"),
+        ("Sofía Delgado", "Product manager jr.", ["Gestión de proyectos", "Liderazgo"], "chart.bar.fill", "Administración de Empresas"),
+        ("Renata Solís", "Fotógrafa y video", ["Fotografía", "Video"], "camera.fill", "Comunicación"),
     ]
 
     /// Genera personas y organizaciones dispersas alrededor de un centro
@@ -116,7 +117,8 @@ extension NearbyEntity {
                 subtitle: person.subtitle,
                 icon: person.icon,
                 tags: person.tags,
-                coordinate: offsetCoordinate(from: center, index: index, total: total)
+                coordinate: offsetCoordinate(from: center, index: index, total: total),
+                fieldOfStudy: person.fieldOfStudy
             )
         }
 

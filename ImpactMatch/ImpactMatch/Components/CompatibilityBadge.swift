@@ -39,6 +39,8 @@ struct CompatibilityBadge: View {
             }
         }
         .frame(width: size, height: size)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("\(percent) por ciento de compatibilidad, \(Color.matchTierLabel(for: percent))"))
     }
 }
 
@@ -70,7 +72,44 @@ struct MatchBreakdownRow: View {
                 }
             }
             .frame(height: 8)
+            .accessibilityHidden(true)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("\(label), peso \(weightPercent) por ciento"))
+        .accessibilityValue(Text("\(Int(value * 100)) por ciento"))
+    }
+}
+
+/// Barra de probabilidad de ser aceptado — reutiliza el mismo % de
+/// compatibilidad que decide la respuesta simulada, así el número
+/// nunca se inventa aparte del motor de matching.
+struct AcceptanceProbabilityBar: View {
+    let percent: Int
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Label("Probabilidad de ser aceptado", systemImage: "chart.line.uptrend.xyaxis")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(Color.textSecondary)
+                Spacer()
+                Text("\(percent)%")
+                    .font(.bodyMedium.weight(.bold))
+                    .foregroundStyle(Color.forMatchScore(percent))
+            }
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Capsule().fill(Color.gray.opacity(0.15))
+                    Capsule()
+                        .fill(LinearGradient.matchGradient(for: percent))
+                        .frame(width: geo.size.width * (Double(percent) / 100))
+                }
+            }
+            .frame(height: 10)
+            .accessibilityHidden(true)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("Probabilidad de ser aceptado: \(percent) por ciento, \(Color.matchTierLabel(for: percent))"))
     }
 }
 

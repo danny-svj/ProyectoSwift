@@ -14,15 +14,15 @@ struct LoginView: View {
 
     private var emailError: String? {
         guard attemptedSubmit else { return nil }
-        if email.isEmpty { return "Ingresa tu correo electrónico." }
-        if !FormValidation.isValidEmail(email) { return "Ingresa un correo válido." }
+        if email.isEmpty { return AppLanguage.localizedString("Ingresa tu correo electrónico.") }
+        if !FormValidation.isValidEmail(email) { return AppLanguage.localizedString("Ingresa un correo válido.") }
         return nil
     }
 
     private var passwordError: String? {
         guard attemptedSubmit else { return nil }
-        if password.isEmpty { return "Ingresa tu contraseña." }
-        if !FormValidation.isValidPassword(password) { return "Debe tener al menos \(FormValidation.minPasswordLength) caracteres." }
+        if password.isEmpty { return AppLanguage.localizedString("Ingresa tu contraseña.") }
+        if !FormValidation.isValidPassword(password) { return AppLanguage.localizedString("Debe tener al menos \(FormValidation.minPasswordLength) caracteres.") }
         return nil
     }
 
@@ -94,7 +94,7 @@ struct LoginView: View {
 }
 
 struct LabeledTextField: View {
-    let title: String
+    let title: LocalizedStringKey
     @Binding var text: String
     var icon: String
     var isSecure: Bool = false
@@ -107,9 +107,11 @@ struct LabeledTextField: View {
                 Image(systemName: icon).foregroundStyle(Color.brandPrimary).frame(width: 18)
                 if isSecure {
                     SecureField("", text: $text)
+                        .accessibilityLabel(Text(title))
                 } else {
                     TextField("", text: $text)
                         .textInputAutocapitalization(.never)
+                        .accessibilityLabel(Text(title))
                 }
             }
             .padding(.horizontal, 14)

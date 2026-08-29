@@ -59,12 +59,14 @@ struct ExploreView: View {
                         Image(systemName: "map.fill")
                             .foregroundStyle(Color.brandPrimary)
                     }
+                    .accessibilityLabel("Ver mapa de cerca de mí")
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { showCreateSheet = true } label: {
                         Image(systemName: "plus.circle.fill")
                             .foregroundStyle(Color.brandPrimary)
                     }
+                    .accessibilityLabel("Publicar nueva oportunidad")
                 }
             }
             .navigationDestination(item: $selectedOpportunity) { opportunity in
@@ -93,9 +95,9 @@ struct ExploreView: View {
     var filterChips: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                FilterChip(title: "Todas", isSelected: selectedType == nil) { selectedType = nil }
+                FilterChip(title: AppLanguage.localizedString("Todas"), isSelected: selectedType == nil) { selectedType = nil }
                 ForEach(OpportunityType.allCases) { type in
-                    FilterChip(title: type.rawValue, isSelected: selectedType == type) { selectedType = type }
+                    FilterChip(title: type.localizedName, isSelected: selectedType == type) { selectedType = type }
                 }
             }
         }
@@ -117,13 +119,14 @@ struct FilterChip: View {
                 .clipShape(Capsule())
         }
         .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? [.isSelected] : [])
     }
 }
 
 struct EmptyStateView: View {
     let icon: String
-    let title: String
-    let message: String
+    let title: LocalizedStringKey
+    let message: LocalizedStringKey
     var body: some View {
         VStack(spacing: 10) {
             Image(systemName: icon).font(.system(size: 34)).foregroundStyle(Color.textTertiary)
@@ -131,6 +134,7 @@ struct EmptyStateView: View {
             Text(message).font(.caption).foregroundStyle(Color.textSecondary).multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity)
+        .accessibilityElement(children: .combine)
     }
 }
 
