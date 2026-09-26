@@ -216,7 +216,7 @@ struct GradientMiniStat: View {
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(.white)
             }
-            Text("\(value)")
+            Text("\(String(value))")
                 .font(.bodyMedium.weight(.bold))
                 .foregroundStyle(Color.textPrimary)
             Text(label)
@@ -229,7 +229,7 @@ struct GradientMiniStat: View {
         .clipShape(RoundedRectangle(cornerRadius: Layout.chipRadius, style: .continuous))
         .shadow(color: .black.opacity(0.05), radius: 8, y: 2)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("\(value) ") + Text(label))
+        .accessibilityLabel(Text("\(String(value)) ") + Text(label))
     }
 }
 
@@ -256,7 +256,7 @@ struct ImpactBanner: View {
     var body: some View {
         HStack(spacing: 18) {
             VStack(alignment: .leading, spacing: 6) {
-                Text("\(stats.alliancesCreated)")
+                Text("\(String(stats.alliancesCreated))")
                     .font(.system(size: 34, weight: .bold, design: .rounded))
                     .foregroundStyle(.white)
                 Text("alianzas creadas gracias a la comunidad ImpactMatch")
@@ -277,7 +277,7 @@ struct ImpactBanner: View {
         .clipShape(RoundedRectangle(cornerRadius: Layout.cardRadius, style: .continuous))
         .shadow(color: Color.brandPrimary.opacity(0.30), radius: 14, y: 5)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("\(stats.alliancesCreated) alianzas creadas gracias a la comunidad ImpactMatch"))
+        .accessibilityLabel(Text("\(String(stats.alliancesCreated)) alianzas creadas gracias a la comunidad ImpactMatch"))
     }
 }
 

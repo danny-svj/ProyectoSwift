@@ -32,7 +32,7 @@ struct CompatibilityBadge: View {
                 .animation(reduceMotion ? nil : .easeOut(duration: 0.6), value: percent)
 
             VStack(spacing: 0) {
-                Text("\(percent)")
+                Text("\(String(percent))")
                     .font(.system(size: size * 0.34, weight: .bold, design: .rounded))
                 Text("%")
                     .font(.system(size: size * 0.18, weight: .semibold, design: .rounded))
@@ -41,7 +41,7 @@ struct CompatibilityBadge: View {
         }
         .frame(width: size, height: size)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("\(percent) por ciento de compatibilidad, \(Color.matchTierLabel(for: percent))"))
+        .accessibilityLabel(Text("\(String(percent)) por ciento de compatibilidad, \(Color.matchTierLabel(for: percent))"))
     }
 }
 
@@ -56,10 +56,10 @@ struct MatchBreakdownRow: View {
                 Text(label)
                     .font(.bodyMedium)
                 Spacer()
-                Text("Peso \(weightPercent)%")
+                Text("Peso \(String(weightPercent))%")
                     .font(.caption)
                     .foregroundStyle(.secondary)
-                Text("\(Int(value * 100))%")
+                Text("\(String(Int(value * 100)))%")
                     .font(.bodyMedium.weight(.semibold))
                     .foregroundStyle(Color.forMatchScore(Int(value * 100)))
                     .frame(width: 44, alignment: .trailing)
@@ -76,8 +76,8 @@ struct MatchBreakdownRow: View {
             .accessibilityHidden(true)
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("\(label), peso \(weightPercent) por ciento"))
-        .accessibilityValue(Text("\(Int(value * 100)) por ciento"))
+        .accessibilityLabel(Text("\(label), peso \(String(weightPercent)) por ciento"))
+        .accessibilityValue(Text("\(String(Int(value * 100))) por ciento"))
     }
 }
 
@@ -94,7 +94,7 @@ struct AcceptanceProbabilityBar: View {
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(Color.textSecondary)
                 Spacer()
-                Text("\(percent)%")
+                Text("\(String(percent))%")
                     .font(.bodyMedium.weight(.bold))
                     .foregroundStyle(Color.forMatchScore(percent))
             }
@@ -110,7 +110,7 @@ struct AcceptanceProbabilityBar: View {
             .accessibilityHidden(true)
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("Probabilidad de ser aceptado: \(percent) por ciento, \(Color.matchTierLabel(for: percent))"))
+        .accessibilityLabel(Text("Probabilidad de ser aceptado: \(String(percent)) por ciento, \(Color.matchTierLabel(for: percent))"))
     }
 }
 

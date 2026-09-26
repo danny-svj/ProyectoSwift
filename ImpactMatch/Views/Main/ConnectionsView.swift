@@ -78,9 +78,13 @@ struct RequestRow: View {
         .cardStyle()
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(
-            "\(request.opportunity.title), \(request.opportunity.organizationName). " +
-            "Estado: \(request.status.localizedName). " +
-            "Compatibilidad: \(request.matchPercent) por ciento."
+            String(
+                format: AppLanguage.localizedString("%@, %@. Estado: %@. Compatibilidad: %@ por ciento."),
+                request.opportunity.title,
+                request.opportunity.organizationName,
+                request.status.localizedName,
+                String(request.matchPercent)
+            )
         )
     }
 }
@@ -100,8 +104,12 @@ struct ConnectionRow: View {
         .cardStyle()
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(
-            "Conexión activa: \(connection.opportunity.title) en \(connection.opportunity.organizationName). " +
-            "Compatibilidad: \(connection.matchPercent) por ciento."
+            String(
+                format: AppLanguage.localizedString("Conexión activa: %@ en %@. Compatibilidad: %@ por ciento."),
+                connection.opportunity.title,
+                connection.opportunity.organizationName,
+                String(connection.matchPercent)
+            )
         )
     }
 }

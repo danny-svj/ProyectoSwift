@@ -86,7 +86,21 @@
       }
     },
     "¿Qué estudias?" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you study?"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você estuda?"
+          }
+        }
+      }
     },
     "¿Qué se hará y por qué importa?" : {
       "extractionState" : "stale",
@@ -123,68 +137,208 @@
       }
     },
     "·" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "·"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "·"
+          }
+        }
+      }
     },
     "%" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%"
+          }
+        }
+      }
     },
     "%@" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
     },
     "%@ " : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ "
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ "
+          }
+        }
+      }
     },
     "%@ alianzas creadas gracias a la comunidad ImpactMatch" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ alliances created thanks to the ImpactMatch community"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ alianças criadas graças à comunidade ImpactMatch"
+          }
+        }
+      }
     },
     "%@ h / semana" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ h / week"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ h / semana"
+          }
+        }
+      }
     },
     "%@ por ciento" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ percent"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ por cento"
+          }
+        }
+      }
     },
     "%@ por ciento de compatibilidad, %@" : {
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ por ciento de compatibilidad, %2$@"
+            "state" : "translated",
+            "value" : "%@ percent compatibility, %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ por cento de compatibilidade, %@"
           }
         }
-      }
+      },
+      "extractionState" : "stale"
     },
     "%@ resultado%@" : {
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ resultado%2$@"
+            "state" : "translated",
+            "value" : "%@ result%@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ resultado%@"
           }
         }
-      }
+      },
+      "extractionState" : "stale"
     },
     "%@, %@" : {
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@, %2$@"
+            "state" : "translated",
+            "value" : "%@, %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, %@"
           }
         }
-      }
+      },
+      "extractionState" : "stale"
     },
     "%@, peso %@ por ciento" : {
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@, peso %2$@ por ciento"
+            "state" : "translated",
+            "value" : "%@, weight %@ percent"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, peso %@ por cento"
+          }
+        }
+      },
+      "extractionState" : "stale"
+    },
+    "%@%%" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@%%"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@%%"
           }
         }
       }
-    },
-    "%@%%" : {
-
     },
     "Aceptada" : {
       "extractionState" : "stale",
@@ -488,7 +642,21 @@
       }
     },
     "Cambia el idioma y la apariencia de inmediato, sin reiniciar la app." : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changes the language and appearance immediately, without restarting the app."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muda o idioma e a aparência imediatamente, sem reiniciar o app."
+          }
+        }
+      }
     },
     "Cancelar" : {
       "extractionState" : "stale",
@@ -626,10 +794,38 @@
       }
     },
     "Claro" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claro"
+          }
+        }
+      }
     },
     "Color" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cor"
+          }
+        }
+      }
     },
     "Cómo contribuyes tú" : {
       "extractionState" : "stale",
@@ -1234,7 +1430,21 @@
       }
     },
     "FINDING YOUR FUTURE" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FINDING YOUR FUTURE"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FINDING YOUR FUTURE"
+          }
+        }
+      }
     },
     "Guardar oportunidad" : {
       "extractionState" : "stale",
@@ -1322,7 +1532,21 @@
       }
     },
     "Hola, %@" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hi, %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Olá, %@"
+          }
+        }
+      }
     },
     "Horario" : {
       "extractionState" : "stale",
@@ -1342,7 +1566,21 @@
       }
     },
     "Ícono" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ícone"
+          }
+        }
+      }
     },
     "Idioma" : {
       "extractionState" : "stale",
@@ -1530,7 +1768,21 @@
       }
     },
     "INICIANDO SISTEMA..." : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "STARTING SYSTEM..."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INICIANDO SISTEMA..."
+          }
+        }
+      }
     },
     "Iniciar sesión" : {
       "localizations" : {
@@ -1756,7 +2008,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Format"
+            "value" : "Modality"
           }
         },
         "pt" : {
@@ -2019,7 +2271,21 @@
       }
     },
     "Oscuro" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escuro"
+          }
+        }
+      }
     },
     "Pendiente" : {
       "extractionState" : "stale",
@@ -2107,7 +2373,21 @@
       }
     },
     "Peso %@%%" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weight %@%%"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso %@%%"
+          }
+        }
+      }
     },
     "Por definir" : {
       "extractionState" : "stale",
@@ -2195,13 +2475,20 @@
     },
     "Probabilidad de ser aceptado: %@ por ciento, %@" : {
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Probabilidad de ser aceptado: %1$@ por ciento, %2$@"
+            "state" : "translated",
+            "value" : "Chance of being accepted: %@ percent, %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Probabilidade de ser aceito: %@ por cento, %@"
           }
         }
-      }
+      },
+      "extractionState" : "stale"
     },
     "Proyecto / Colaboración" : {
       "extractionState" : "stale",
@@ -2525,7 +2812,21 @@
       }
     },
     "Sistema" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistema"
+          }
+        }
+      }
     },
     "Sobre mí" : {
       "extractionState" : "stale",
@@ -2595,7 +2896,21 @@
       }
     },
     "Sugeridas para %@" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggested for %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sugeridas para %@"
+          }
+        }
+      }
     },
     "Swift, SwiftUI, Diseño" : {
       "extractionState" : "stale",
@@ -2896,6 +3211,261 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voluntariado"
+          }
+        }
+      }
+    },
+    "Marca" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marca"
+          }
+        }
+      }
+    },
+    "Océano" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocean"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oceano"
+          }
+        }
+      }
+    },
+    "Atardecer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sunset"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pôr do sol"
+          }
+        }
+      }
+    },
+    "Bosque" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forest"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Floresta"
+          }
+        }
+      }
+    },
+    "Fuego" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fire"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fogo"
+          }
+        }
+      }
+    },
+    "Rosa" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rose"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosa"
+          }
+        }
+      }
+    },
+    "Noche" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Night"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noite"
+          }
+        }
+      }
+    },
+    "Carrera: %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Career: %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carreira: %@"
+          }
+        }
+      }
+    },
+    "Ubicación: %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location: %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Localização: %@"
+          }
+        }
+      }
+    },
+    "Cambiar avatar, %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change avatar, %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trocar avatar, %@"
+          }
+        }
+      }
+    },
+    "Envía una solicitud de interés a %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send an interest request to %@"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envie uma solicitação de interesse para %@"
+          }
+        }
+      }
+    },
+    "Disponibilidad: %@ horas por semana" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Availability: %@ hours per week"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disponibilidade: %@ horas por semana"
+          }
+        }
+      }
+    },
+    "%@, %@. %@. Modalidad: %@. Compatibilidad: %@ por ciento, nivel %@." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, %@. %@. Modality: %@. Compatibility: %@ percent, level %@."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, %@. %@. Modalidade: %@. Compatibilidade: %@ por cento, nível %@."
+          }
+        }
+      }
+    },
+    "%@, %@. Estado: %@. Compatibilidad: %@ por ciento." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, %@. Status: %@. Compatibility: %@ percent."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, %@. Status: %@. Compatibilidade: %@ por cento."
+          }
+        }
+      }
+    },
+    "Conexión activa: %@ en %@. Compatibilidad: %@ por ciento." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Active connection: %@ at %@. Compatibility: %@ percent."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conexão ativa: %@ na %@. Compatibilidade: %@ por cento."
           }
         }
       }

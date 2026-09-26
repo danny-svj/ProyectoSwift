@@ -8,10 +8,15 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct ImpactMatchApp: App {
     @StateObject private var store = AppStore()
+
+    init() {
+        FirebaseApp.configure()
+    }
 
     var body: some Scene {
         WindowGroup {

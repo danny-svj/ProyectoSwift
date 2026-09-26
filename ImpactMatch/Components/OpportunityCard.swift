@@ -111,10 +111,16 @@ struct OpportunityCard: View {
     }
 
     private var cardAccessibilityLabel: String {
-        "\(opportunity.title), \(opportunity.organizationName). " +
-        "\(opportunity.type.localizedName). " +
-        "Modalidad: \(opportunity.modality.localizedName). " +
-        "Compatibilidad: \(matchPercent) por ciento, nivel \(Color.matchTierLabel(for: matchPercent))."
+        let template = AppLanguage.localizedString("%@, %@. %@. Modalidad: %@. Compatibilidad: %@ por ciento, nivel %@.")
+        return String(
+            format: template,
+            opportunity.title,
+            opportunity.organizationName,
+            opportunity.type.localizedName,
+            opportunity.modality.localizedName,
+            String(matchPercent),
+            Color.matchTierLabel(for: matchPercent)
+        )
     }
 }
 

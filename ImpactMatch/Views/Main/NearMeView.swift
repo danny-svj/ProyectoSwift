@@ -150,7 +150,7 @@ struct NearMeView: View {
             }
 
             if entities.count != allNearby.count {
-                Text("\(entities.count) resultado\(entities.count == 1 ? "" : "s")")
+                Text("\(String(entities.count)) resultado\(entities.count == 1 ? "" : "s")")
                     .font(.caption)
                     .foregroundStyle(Color.textSecondary)
                     .padding(.horizontal, Layout.screenPadding)

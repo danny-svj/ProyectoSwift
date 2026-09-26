@@ -6,6 +6,11 @@ options:
   createIntermediateGroups: true
   developmentLanguage: es
 
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    from: "12.0.0"
+
 targets:
   ImpactMatch:
     type: application
@@ -30,6 +35,10 @@ targets:
       - sdk: MapKit.framework
       - sdk: CoreLocation.framework
       - sdk: UserNotifications.framework
+      - package: Firebase
+        products:
+          - FirebaseAuth
+          - FirebaseFirestore
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.impactmatch.ImpactMatch

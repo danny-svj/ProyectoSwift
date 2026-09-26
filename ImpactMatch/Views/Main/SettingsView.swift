@@ -72,7 +72,7 @@ struct SettingsView: View {
             }
             .confirmationDialog("¿Cerrar sesión?", isPresented: $showConfirmLogout, titleVisibility: .visible) {
                 Button("Cerrar sesión", role: .destructive) {
-                    store.isLoggedIn = false
+                    store.signOut()
                     dismiss()
                 }
                 Button("Cancelar", role: .cancel) {}

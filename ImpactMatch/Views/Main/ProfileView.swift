@@ -309,7 +309,7 @@ struct AvatarPickerSheet: View {
                                     }
                                 }
                             }
-                            .accessibilityLabel(item.label)
+                            .accessibilityLabel(AppLanguage.localizedString(item.label))
                             .accessibilityAddTraits(avatarGradientName == item.name ? [.isSelected] : [])
                         }
                     }

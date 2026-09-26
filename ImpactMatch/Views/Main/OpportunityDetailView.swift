@@ -19,10 +19,10 @@ struct OpportunityDetailView: View {
 
                 VStack(alignment: .leading, spacing: 14) {
                     SectionHeader(title: "Compatibilidad explicada")
-                    MatchBreakdownRow(label: "Habilidades", value: match.breakdown.skillsScore, weightPercent: 50)
-                    MatchBreakdownRow(label: "Intereses", value: match.breakdown.interestsScore, weightPercent: 20)
-                    MatchBreakdownRow(label: "Disponibilidad", value: match.breakdown.availabilityScore, weightPercent: 15)
-                    MatchBreakdownRow(label: "Modalidad", value: match.breakdown.modalityScore, weightPercent: 15)
+                    MatchBreakdownRow(label: AppLanguage.localizedString("Habilidades"), value: match.breakdown.skillsScore, weightPercent: 50)
+                    MatchBreakdownRow(label: AppLanguage.localizedString("Intereses"), value: match.breakdown.interestsScore, weightPercent: 20)
+                    MatchBreakdownRow(label: AppLanguage.localizedString("Disponibilidad"), value: match.breakdown.availabilityScore, weightPercent: 15)
+                    MatchBreakdownRow(label: AppLanguage.localizedString("Modalidad"), value: match.breakdown.modalityScore, weightPercent: 15)
                     Divider()
                     AcceptanceProbabilityBar(percent: match.acceptanceProbability)
                 }

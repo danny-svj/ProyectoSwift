@@ -19,7 +19,7 @@ struct StatCard: View {
                 Circle().fill(tint.opacity(0.14)).frame(width: 38, height: 38)
                 Image(systemName: icon).foregroundStyle(tint)
             }
-            Text("\(value)")
+            Text("\(String(value))")
                 .font(.statNumber)
                 .foregroundStyle(Color.textPrimary)
                 .contentTransition(.numericText())
@@ -32,7 +32,7 @@ struct StatCard: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .cardStyle()
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("\(value) ") + Text(label))
+        .accessibilityLabel(Text("\(String(value)) ") + Text(label))
     }
 }
 

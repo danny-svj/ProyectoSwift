@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct LoginView: View {
     @EnvironmentObject var store: AppStore
@@ -11,6 +12,9 @@ struct LoginView: View {
     @State private var password        = ""
     @State private var goToSignUp      = false
     @State private var attemptedSubmit = false
+    @State private var isSubmitting    = false
+    @State private var authErrorMessage: String?
+    @State private var showResetConfirmation = false
 
     // Animaciones de entrada
     @State private var logoScale:     CGFloat = 0.5
@@ -80,6 +84,11 @@ struct LoginView: View {
                 UserTypeSelectionView()
             }
             .onAppear { runEntrance() }
+            .alert("Revisa tu correo", isPresented: $showResetConfirmation) {
+                Button("Listo", role: .cancel) {}
+            } message: {
+                Text("Si existe una cuenta con ese correo, te enviamos un enlace para restablecer tu contraseña.")
+            }
         }
     }
 
@@ -216,20 +225,47 @@ struct LoginView: View {
                                  icon: "lock.fill", isSecure: true, errorMessage: passwordError)
                 HStack {
                     Spacer()
-                    Button("¿Olvidaste tu contraseña?") {}
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Color.brandPrimary)
+                    Button("¿Olvidaste tu contraseña?") {
+                        guard FormValidation.isValidEmail(email) else {
+                            attemptedSubmit = true
+                            return
+                        }
+                        Auth.auth().sendPasswordReset(withEmail: email) { _ in }
+                        showResetConfirmation = true
+                    }
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(Color.brandPrimary)
                 }
+            }
+
+            if let authErrorMessage {
+                Text(authErrorMessage)
+                    .font(.caption)
+                    .foregroundStyle(Color.matchLow)
             }
 
             Button {
                 attemptedSubmit = true
-                guard isValid else { return }
-                withAnimation { store.isLoggedIn = true }
+                guard isValid, !isSubmitting else { return }
+                isSubmitting = true
+                authErrorMessage = nil
+                Task {
+                    do {
+                        try await store.signIn(email: email, password: password)
+                    } catch {
+                        isSubmitting = false
+                        authErrorMessage = AuthErrorMessages.message(for: error)
+                    }
+                }
             } label: {
-                Text("Iniciar sesión")
+                if isSubmitting {
+                    ProgressView().tint(.white)
+                } else {
+                    Text("Iniciar sesión")
+                }
             }
             .buttonStyle(PrimaryGradientButtonStyle())
+            .disabled(isSubmitting)
 
             HStack {
                 VStack { Divider() }

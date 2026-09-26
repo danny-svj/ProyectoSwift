@@ -116,12 +116,12 @@ struct ProfileEditorView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         SectionHeader(title: "Disponibilidad")
                         HStack {
-                            Text("\(Int(availabilityHours)) h / semana").font(.bodyMedium.weight(.semibold))
+                            Text("\(String(Int(availabilityHours))) h / semana").font(.bodyMedium.weight(.semibold))
                             Spacer()
                         }
                         Slider(value: $availabilityHours, in: 1...40, step: 1)
                             .tint(Color.brandPrimary)
-                            .accessibilityLabel("Disponibilidad: \(Int(availabilityHours)) horas por semana")
+                            .accessibilityLabel("Disponibilidad: \(String(Int(availabilityHours))) horas por semana")
                     }
                     .cardStyle()
                 }

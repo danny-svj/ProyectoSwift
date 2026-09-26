@@ -15,6 +15,8 @@ struct SignUpView: View {
     @State private var password = ""
     @State private var goToProfileSetup = false
     @State private var attemptedSubmit = false
+    @State private var isSubmitting = false
+    @State private var authErrorMessage: String?
 
     private var nameError: String? {
         guard attemptedSubmit else { return nil }
@@ -47,14 +49,7 @@ struct SignUpView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                VStack(spacing: 6) {
-                    Text("Crea tu cuenta")
-                        .font(.screenTitle)
-                    Text(userType == .person ? "Regístrate como persona" : "Regístrate como empresa u organización")
-                        .font(.bodyRegular)
-                        .foregroundStyle(Color.textSecondary)
-                }
-                .padding(.top, 12)
+                heroHeader
 
                 VStack(spacing: 14) {
                     LabeledTextField(title: userType == .person ? "Nombre completo" : "Nombre de la organización", text: $name, icon: "person.text.rectangle.fill", errorMessage: nameError)
@@ -62,14 +57,36 @@ struct SignUpView: View {
                     LabeledTextField(title: "Contraseña", text: $password, icon: "lock.fill", isSecure: true, errorMessage: passwordError)
                 }
 
+                if let authErrorMessage {
+                    Text(authErrorMessage)
+                        .font(.caption)
+                        .foregroundStyle(Color.matchLow)
+                }
+
                 Button {
                     attemptedSubmit = true
-                    guard isValid else { return }
-                    goToProfileSetup = true
+                    guard isValid, !isSubmitting else { return }
+                    isSubmitting = true
+                    authErrorMessage = nil
+                    Task {
+                        do {
+                            try await store.signUp(email: email, password: password)
+                            isSubmitting = false
+                            goToProfileSetup = true
+                        } catch {
+                            isSubmitting = false
+                            authErrorMessage = AuthErrorMessages.message(for: error)
+                        }
+                    }
                 } label: {
-                    Text("Continuar")
+                    if isSubmitting {
+                        ProgressView().tint(.white)
+                    } else {
+                        Text("Continuar")
+                    }
                 }
                 .buttonStyle(PrimaryGradientButtonStyle())
+                .disabled(isSubmitting)
                 .padding(.top, 6)
 
                 Text("Al continuar aceptas los Términos y la Política de privacidad de ImpactMatch.")
@@ -84,6 +101,27 @@ struct SignUpView: View {
         .navigationDestination(isPresented: $goToProfileSetup) {
             ProfileEditorView(mode: .create(userType: userType, name: name))
         }
+    }
+
+    // MARK: – Encabezado con degradado de marca
+
+    private var heroHeader: some View {
+        VStack(spacing: 10) {
+            IMLogoMark(size: 52, style: .white)
+            Text("Crea tu cuenta")
+                .font(.screenTitle)
+                .foregroundStyle(.white)
+            Text(userType == .person ? "Regístrate como persona" : "Regístrate como empresa u organización")
+                .font(.bodyRegular)
+                .foregroundStyle(.white.opacity(0.85))
+                .multilineTextAlignment(.center)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 28)
+        .padding(.horizontal, 20)
+        .background(LinearGradient.heroGradient)
+        .clipShape(RoundedRectangle(cornerRadius: Layout.cardRadius, style: .continuous))
+        .padding(.top, 4)
     }
 }
 

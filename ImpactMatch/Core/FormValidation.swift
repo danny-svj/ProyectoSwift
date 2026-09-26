@@ -2,9 +2,9 @@
 //  FormValidation.swift
 //  ImpactMatch
 //
-//  Validación de formularios en el cliente (formato de correo,
-//  longitud de contraseña). No hay backend real todavía, así que
-//  esto no verifica credenciales — solo que el formato sea válido.
+//  Validación de formato en el cliente (correo bien formado,
+//  contraseña con longitud mínima) antes de llamar a Firebase Auth,
+//  que es quien verifica las credenciales de verdad.
 //
 
 import Foundation

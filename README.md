@@ -103,11 +103,29 @@ un número — así el porcentaje es explicable, como pediste.
 
 ## Datos y backend
 
-Todo corre con datos mock en memoria (`MockData.swift`) — no hay
-almacenamiento persistente ni Firebase todavía. Los modelos ya son
-`Codable`, así que conectar Firebase/Firestore más adelante (para v2) es
-directo: reemplazarías `AppStore` por una versión que lea/escriba de
-Firestore en vez de arrays en memoria, sin tocar las vistas.
+Las cuentas son reales: **Firebase Auth** con **correo y contraseña**
+(`AppStore.signUp`/`signIn`/`signOut` en `AppStore.swift`). El registro
+(`SignUpView`) crea la cuenta con `Auth.auth().createUser` antes de
+pasar a `ProfileEditorView` a armar el perfil; el login (`LoginView`)
+usa `Auth.auth().signIn`, incluyendo "¿Olvidaste tu contraseña?" real
+(`sendPasswordReset`). Los errores de Firebase (correo ya usado,
+contraseña incorrecta, etc.) se traducen a español en
+`AuthErrorMessages.swift`.
+
+El estado de la app (perfil, oportunidades, solicitudes, conexiones)
+se persiste en **Firebase Firestore** (`FirestoreStore.swift`): cada
+cuenta tiene su documento `users/{uid}`, y cada vez que cambia algo
+(`@Published ... { didSet { persist() } }`) se vuelve a escribir ese
+documento completo. Al reabrir la app con sesión activa, `AppStore`
+restaura ese documento automáticamente (`restoreSession()`).
+`MockData.swift` sigue siendo el valor por defecto instantáneo antes
+de que exista sesión, y el punto de partida de una cuenta nueva.
+
+Requiere un `ImpactMatch/GoogleService-Info.plist` (no incluido en el
+repo por equipo — descárgalo desde la consola de Firebase de tu
+proyecto, con bundle ID `com.impactmatch.ImpactMatch`, y habilita el
+proveedor "Email/Password" en Authentication). Sin ese archivo la app
+truena al arrancar (`FirebaseApp.configure()`).
 
 ## Alcance de esta versión (v1, escolar)
 
